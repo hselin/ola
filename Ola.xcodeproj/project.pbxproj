@@ -15,6 +15,7 @@
 		4A0A804D1A1C0C7E001C82B6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A0A804C1A1C0C7E001C82B6 /* Images.xcassets */; };
 		4A0A80501A1C0C7F001C82B6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A0A804E1A1C0C7F001C82B6 /* LaunchScreen.xib */; };
 		4A0A805C1A1C0C7F001C82B6 /* OlaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0A805B1A1C0C7F001C82B6 /* OlaTests.m */; };
+		4ABB40D71A1C313400512179 /* DoctorCommTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABB40D61A1C313400512179 /* DoctorCommTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		4A0A80551A1C0C7F001C82B6 /* OlaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OlaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A0A805A1A1C0C7F001C82B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A0A805B1A1C0C7F001C82B6 /* OlaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OlaTests.m; sourceTree = "<group>"; };
+		4ABB40D51A1C313400512179 /* DoctorCommTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorCommTVC.h; sourceTree = "<group>"; };
+		4ABB40D61A1C313400512179 /* DoctorCommTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorCommTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				4A0A80461A1C0C7E001C82B6 /* SecondViewController.h */,
 				4A0A80471A1C0C7E001C82B6 /* SecondViewController.m */,
 				4A0A80491A1C0C7E001C82B6 /* Main.storyboard */,
+				4ABB40D51A1C313400512179 /* DoctorCommTVC.h */,
+				4ABB40D61A1C313400512179 /* DoctorCommTVC.m */,
 				4A0A804C1A1C0C7E001C82B6 /* Images.xcassets */,
 				4A0A804E1A1C0C7F001C82B6 /* LaunchScreen.xib */,
 				4A0A803C1A1C0C7E001C82B6 /* Supporting Files */,
@@ -225,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A0A80481A1C0C7E001C82B6 /* SecondViewController.m in Sources */,
+				4ABB40D71A1C313400512179 /* DoctorCommTVC.m in Sources */,
 				4A0A80421A1C0C7E001C82B6 /* AppDelegate.m in Sources */,
 				4A0A80451A1C0C7E001C82B6 /* FirstViewController.m in Sources */,
 				4A0A803F1A1C0C7E001C82B6 /* main.m in Sources */,
@@ -418,6 +424,7 @@
 				4A0A80611A1C0C7F001C82B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4A0A80621A1C0C7F001C82B6 /* Build configuration list for PBXNativeTarget "OlaTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +433,7 @@
 				4A0A80641A1C0C7F001C82B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
