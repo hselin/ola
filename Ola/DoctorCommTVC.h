@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DoctorCommTVC : UITableViewController
+#import "StaticDataTableViewController.h"
+
+@interface DoctorCommTVC : StaticDataTableViewController <UISearchBarDelegate>
 
 @end
