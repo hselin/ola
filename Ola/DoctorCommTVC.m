@@ -9,23 +9,27 @@
 #import "DoctorCommTVC.h"
 
 @interface DoctorCommTVC ()
+@property (strong, nonatomic) IBOutletCollection(UITableViewCell) NSArray *staticCells;
 
 @end
 
 @implementation DoctorCommTVC
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    //[super viewDidLoad];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+
+    
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+    //[super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
@@ -98,5 +102,33 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [self handleSearch:searchBar];
+}
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+    [self handleSearch:searchBar];
+}
+
+- (void)handleSearch:(UISearchBar *)searchBar {
+    NSLog(@"User searched for %@", searchBar.text);
+    [searchBar resignFirstResponder]; // if you want the keyboard to go away
+    
+    self.hideSectionsWithHiddenRows = YES; //YES, NO
+    [self cells:self.staticCells setHidden:YES];
+    [self reloadDataAnimated:YES];
+    
+    //self cell:<#(UITableViewCell *)#> setHidden:<#(BOOL)#>
+    
+    [self updateCells:self.staticCells];
+    [self reloadDataAnimated:YES];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar {
+    NSLog(@"User canceled search");
+    [searchBar resignFirstResponder]; // if you want the keyboard to go away
+}
 
 @end

@@ -35,6 +35,9 @@
                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="6Wz-wg-6jG" id="hA7-Ud-XQQ"/>
+                            </connections>
                         </searchBar>
                         <sections>
                             <tableViewSection id="SRK-8O-wlY">
@@ -114,6 +117,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Doctor Communication" id="h27-mS-Vwb"/>
+                    <connections>
+                        <outletCollection property="staticCells" destination="irj-RT-P0B" id="cya-bb-lHd"/>
+                        <outletCollection property="staticCells" destination="6B6-of-3If" id="CnL-vK-FFR"/>
+                        <outletCollection property="staticCells" destination="giM-7N-A2b" id="jyd-D3-eJZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Qh-2E-DoU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -136,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vbm-VT-rfx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1490" y="-58"/>
+            <point key="canvasLocation" x="2530" y="-708"/>
         </scene>
         <!--Item-->
         <scene sceneID="l25-6n-iaZ">
@@ -149,6 +157,14 @@
                     <view key="view" contentMode="scaleToFill" id="veB-uv-V0A">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mR2-8N-6yw">
+                                <rect key="frame" x="231" y="145" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="8Ok-el-FJc"/>
