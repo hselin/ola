@@ -10,6 +10,7 @@
 
 @interface DoctorCommTVC ()
 @property (strong, nonatomic) IBOutletCollection(UITableViewCell) NSArray *staticCells;
+@property (weak, nonatomic) IBOutlet UITableViewCell *moo;
 
 @end
 
@@ -25,11 +26,11 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
 
-    
+    [super viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning {
-    //[super didReceiveMemoryWarning];
+    [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
@@ -109,7 +110,7 @@
 }
 
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
-    [self handleSearch:searchBar];
+    //[self handleSearch:searchBar];
 }
 
 - (void)handleSearch:(UISearchBar *)searchBar {
@@ -117,13 +118,20 @@
     [searchBar resignFirstResponder]; // if you want the keyboard to go away
     
     self.hideSectionsWithHiddenRows = YES; //YES, NO
-    [self cells:self.staticCells setHidden:YES];
+    //[self cells:self.staticCells setHidden:YES];
+    //[self reloadDataAnimated:YES];
+    
+    [self cell:self.moo setHidden:YES];
     [self reloadDataAnimated:YES];
     
-    //self cell:<#(UITableViewCell *)#> setHidden:<#(BOOL)#>
+    NSLog(@" %s", [self cellIsHidden:self.moo] ? "true" : "false");
+    //NSLog(@" %s", );
     
-    [self updateCells:self.staticCells];
-    [self reloadDataAnimated:YES];
+    
+
+
+    //[self updateCells:self.staticCells];
+    //[self reloadDataAnimated:YES];
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar {
