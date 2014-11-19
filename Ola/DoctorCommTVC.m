@@ -10,7 +10,6 @@
 
 @interface DoctorCommTVC ()
 @property (strong, nonatomic) IBOutletCollection(UITableViewCell) NSArray *staticCells;
-@property (weak, nonatomic) IBOutlet UITableViewCell *moo;
 
 @end
 
@@ -105,30 +104,78 @@
 */
 
 
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    //[searchBar resignFirstResponder];
+    [searchBar setShowsCancelButton:YES animated:YES];
+    //[self handleSearch:searchBar];
+}
+
+- (void) searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    [self handleSearch:searchBar];
+}
+
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    //[searchBar resignFirstResponder];
+    [searchBar setShowsCancelButton:NO animated:YES];
     [self handleSearch:searchBar];
 }
 
 - (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+    //[searchBar resignFirstResponder];
     //[self handleSearch:searchBar];
 }
 
 - (void)handleSearch:(UISearchBar *)searchBar {
     NSLog(@"User searched for %@", searchBar.text);
-    [searchBar resignFirstResponder]; // if you want the keyboard to go away
+    //[searchBar resignFirstResponder]; // if you want the keyboard to go away
     
-    self.hideSectionsWithHiddenRows = YES; //YES, NO
+    if([searchBar.text length]==0)
+    {
+         [self cells:self.staticCells setHidden:NO];
+    }
+    else
+    {
+        int selectedRow = (int)[searchBar.text length] % [self.staticCells count];
+        
+        NSLog(@"select row %d", selectedRow);
+        
+        
+        self.hideSectionsWithHiddenRows = YES;
+        
+        for (UITableViewCell * cell in self.staticCells) {
+            if([self.staticCells indexOfObject:cell] == selectedRow)
+                [self cell:cell setHidden:NO];
+            else
+                [self cell:cell setHidden:YES];
+        }
+
+    }
+    
+    [self reloadDataAnimated:YES];
+    
+    //[self updateCells:self.staticCells];
+    //[self reloadDataAnimated:YES];
+
+    
+     //YES, NO
     //[self cells:self.staticCells setHidden:YES];
     //[self reloadDataAnimated:YES];
     
-    [self cell:self.moo setHidden:YES];
-    [self reloadDataAnimated:YES];
+    //[self cell:self.moo setHidden:YES];
+    //[self reloadDataAnimated:YES];
     
-    NSLog(@" %s", [self cellIsHidden:self.moo] ? "true" : "false");
+    //NSLog(@" %s", [self cellIsHidden:self.moo] ? "true" : "false");
+    
+    
+    
+    
     //NSLog(@" %s", );
     
     
-
+    
 
     //[self updateCells:self.staticCells];
     //[self reloadDataAnimated:YES];
@@ -136,7 +183,14 @@
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar {
     NSLog(@"User canceled search");
-    [searchBar resignFirstResponder]; // if you want the keyboard to go away
+    //[searchBar resignFirstResponder];
+    [searchBar setShowsCancelButton:NO animated:YES];
+    
+    
+    [self cells:self.staticCells setHidden:NO];
+    [self reloadDataAnimated:YES];
+    
+    //[searchBar resignFirstResponder]; // if you want the keyboard to go away
 }
 
 @end
