@@ -69,7 +69,7 @@
                                             <segue destination="g5h-Hc-ca7" kind="push" id="vWb-Wz-sVk"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="gHf-2C-gb9" detailTextLabel="IHD-KW-l3z" style="IBUITableViewCellStyleSubtitle" id="6B6-of-3If">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="gHf-2C-gb9" detailTextLabel="IHD-KW-l3z" style="IBUITableViewCellStyleSubtitle" id="6B6-of-3If">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="center" tableViewCell="6B6-of-3If" id="d7j-Xb-LPe">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -89,8 +89,11 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="nDN-uc-Que" kind="push" id="I97-g6-r1v"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Wur-cU-T07" detailTextLabel="O4U-wG-RmI" style="IBUITableViewCellStyleSubtitle" id="giM-7N-A2b">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Wur-cU-T07" detailTextLabel="O4U-wG-RmI" style="IBUITableViewCellStyleSubtitle" id="giM-7N-A2b">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="giM-7N-A2b" id="SZ6-fE-ctG">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -110,6 +113,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="xIU-HC-Ece" kind="push" id="fLL-7a-Arv"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -130,24 +136,24 @@
             </objects>
             <point key="canvasLocation" x="1557" y="-708"/>
         </scene>
-        <!--View Controller-->
+        <!--Your new bolus ratio-->
         <scene sceneID="BOn-9i-ywk">
             <objects>
                 <viewController id="g5h-Hc-ca7" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="6fw-ep-3ZV"/>
-                        <viewControllerLayoutGuide type="bottom" id="Tet-tr-FV7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QkX-BQ-c11">
+                    <webView key="view" contentMode="scaleToFill" scalesPageToFit="YES" id="fpp-BL-0PP">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="H4F-Fe-wVf"/>
+                    </webView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Your new bolus ratio" id="H4F-Fe-wVf">
+                        <barButtonItem key="rightBarButtonItem" title="Reply" id="np9-4g-9zt"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vbm-VT-rfx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2530" y="-708"/>
+            <point key="canvasLocation" x="2380" y="-1252"/>
         </scene>
         <!--Item-->
         <scene sceneID="l25-6n-iaZ">
@@ -282,6 +288,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="19V-MS-Wvz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="745" y="-708"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0k3-MI-1ZB">
+            <objects>
+                <viewController id="nDN-uc-Que" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rac-fP-nGT"/>
+                        <viewControllerLayoutGuide type="bottom" id="anO-98-UKY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="j2A-0Q-UBK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mFH-bv-Gen"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9C6-Nx-iH8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2426" y="-594"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="JjY-R7-ZMz">
+            <objects>
+                <viewController id="xIU-HC-Ece" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7v7-XC-P4j"/>
+                        <viewControllerLayoutGuide type="bottom" id="J6d-RD-A1t"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cag-Y3-iRR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4ZD-kg-aHk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wl3-aO-4fF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2044" y="216"/>
         </scene>
     </scenes>
 </document>
