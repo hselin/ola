@@ -24,7 +24,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-168" y="-440"/>
+            <point key="canvasLocation" x="-1076" y="-1280"/>
         </scene>
         <!--Doctor Communication-->
         <scene sceneID="zTA-vH-IY1">
@@ -121,7 +121,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Doctor Communication" id="h27-mS-Vwb"/>
                     <connections>
-                        <outlet property="moo" destination="irj-RT-P0B" id="eJN-80-g4u"/>
                         <outletCollection property="staticCells" destination="irj-RT-P0B" id="cya-bb-lHd"/>
                         <outletCollection property="staticCells" destination="6B6-of-3If" id="CnL-vK-FFR"/>
                         <outletCollection property="staticCells" destination="giM-7N-A2b" id="jyd-D3-eJZ"/>
@@ -175,7 +174,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="092-Ot-Pri" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="708" y="320"/>
+            <point key="canvasLocation" x="-532" y="64"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="LLT-LP-eZH">
+            <objects>
+                <tableViewController id="PKI-RA-PGY" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="k9W-2Q-tqq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="35p-Pc-jdl">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aNG-DT-oTV">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aNG-DT-oTV" id="1kG-La-7r1">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="PKI-RA-PGY" id="lKw-wx-Ezp"/>
+                            <outlet property="delegate" destination="PKI-RA-PGY" id="sUm-QF-VT6"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bdv-66-bhS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1136" y="885"/>
         </scene>
         <!--Item-->
         <scene sceneID="i2b-w1-qW5">
@@ -194,7 +224,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLN-Of-LtP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="80" y="-2615"/>
+            <point key="canvasLocation" x="-472" y="-3127"/>
         </scene>
         <!--Item-->
         <scene sceneID="GW8-Ha-ipg">
