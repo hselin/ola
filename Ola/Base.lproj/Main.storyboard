@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -125,7 +126,13 @@
                             <outlet property="delegate" destination="6Wz-wg-6jG" id="xmu-Og-vu4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Doctor Communication" id="h27-mS-Vwb"/>
+                    <navigationItem key="navigationItem" title="Doctor Communication" id="h27-mS-Vwb">
+                        <barButtonItem key="rightBarButtonItem" title="New mail" id="9ah-C3-L97">
+                            <connections>
+                                <segue destination="5yw-Ae-ahN" kind="presentation" id="0IM-UK-Gch"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outletCollection property="staticCells" destination="irj-RT-P0B" id="cya-bb-lHd"/>
                         <outletCollection property="staticCells" destination="6B6-of-3If" id="CnL-vK-FFR"/>
@@ -139,21 +146,140 @@
         <!--Your new bolus ratio-->
         <scene sceneID="BOn-9i-ywk">
             <objects>
-                <viewController id="g5h-Hc-ca7" sceneMemberID="viewController">
-                    <webView key="view" contentMode="scaleToFill" scalesPageToFit="YES" id="fpp-BL-0PP">
+                <viewController id="g5h-Hc-ca7" customClass="DocEmailUIVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z7c-Uu-Dos"/>
+                        <viewControllerLayoutGuide type="bottom" id="Iqz-4d-NsE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="j8g-DQ-qgW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gRh-Tx-pau">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">From: Dr. Holmes
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="charWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">Date: October 27, 2015 at 6:00 PM
+
+I've noticed that you experienced several low blood sugar 
+events during Monday mornings for the last few month.
+
+I would like to decrease your bolus ratio from 10 g/unit 
+to 8 g/unit during Monday mornings.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="new_bolus_graph" translatesAutoresizingMaskIntoConstraints="NO" id="KTP-2M-bty">
+                                <rect key="frame" x="211" y="305" width="178" height="83"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ue-5R-hHb">
+                                <rect key="frame" x="271" y="446" width="58" height="30"/>
+                                <state key="normal" title="Approve">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="approvebutton:" destination="g5h-Hc-ca7" eventType="touchUpInside" id="oHV-0Z-EzU"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </webView>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="6Ue-5R-hHb" secondAttribute="centerX" id="Frv-Q0-TFy"/>
+                            <constraint firstAttribute="centerX" secondItem="KTP-2M-bty" secondAttribute="centerX" id="UQF-6M-lOa"/>
+                        </constraints>
+                    </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Your new bolus ratio" id="H4F-Fe-wVf">
-                        <barButtonItem key="rightBarButtonItem" title="Reply" id="np9-4g-9zt"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reply" id="np9-4g-9zt">
+                            <connections>
+                                <segue destination="5yw-Ae-ahN" kind="presentation" id="0oX-hA-0J0"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="approvebutton" destination="6Ue-5R-hHb" id="rbY-Vf-uqs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vbm-VT-rfx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="fAL-Bp-O5j">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </objects>
-            <point key="canvasLocation" x="2380" y="-1252"/>
+            <point key="canvasLocation" x="2381" y="-1252"/>
+        </scene>
+        <!--EmailUIVC-->
+        <scene sceneID="Mbl-fY-kz5">
+            <objects>
+                <viewController id="5yw-Ae-ahN" customClass="EmailUIVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="utq-cb-dKX"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ttf-pc-eUe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LH4-pC-pyU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nce-72-f6N">
+                                <rect key="frame" x="548" y="53" width="36" height="30"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendbutton:" destination="5yw-Ae-ahN" eventType="touchUpInside" id="XIS-nq-OuQ"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zws-sZ-8o8">
+                                <rect key="frame" x="16" y="91" width="568" height="501"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSr-tZ-7ni">
+                                <rect key="frame" x="16" y="53" width="48" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelbutton:" destination="5yw-Ae-ahN" eventType="touchUpInside" id="w9G-st-b3R"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zws-sZ-8o8" firstAttribute="leading" secondItem="uSr-tZ-7ni" secondAttribute="leading" id="DGk-Aq-fSo"/>
+                            <constraint firstItem="nce-72-f6N" firstAttribute="trailing" secondItem="LH4-pC-pyU" secondAttribute="trailingMargin" id="ORo-mT-QU9"/>
+                            <constraint firstItem="uSr-tZ-7ni" firstAttribute="top" secondItem="utq-cb-dKX" secondAttribute="bottom" constant="33" id="PTd-nk-794"/>
+                            <constraint firstItem="nce-72-f6N" firstAttribute="trailing" secondItem="zws-sZ-8o8" secondAttribute="trailing" id="SFI-yi-1hu"/>
+                            <constraint firstItem="zws-sZ-8o8" firstAttribute="leading" secondItem="LH4-pC-pyU" secondAttribute="leadingMargin" id="XMA-Xm-kj3"/>
+                            <constraint firstItem="nce-72-f6N" firstAttribute="baseline" secondItem="uSr-tZ-7ni" secondAttribute="baseline" id="YBc-LO-tFs"/>
+                            <constraint firstItem="zws-sZ-8o8" firstAttribute="top" secondItem="uSr-tZ-7ni" secondAttribute="bottom" constant="8" symbolic="YES" id="ocq-Bz-Mnl"/>
+                            <constraint firstItem="Ttf-pc-eUe" firstAttribute="top" secondItem="zws-sZ-8o8" secondAttribute="bottom" constant="8" symbolic="YES" id="t65-6U-Jg6"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <connections>
+                        <outlet property="emailtextinput" destination="zws-sZ-8o8" id="PB8-Az-V0D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wRi-rZ-DpL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1552" y="-1387"/>
         </scene>
         <!--Item-->
         <scene sceneID="l25-6n-iaZ">
@@ -229,6 +355,26 @@
                     <tabBarItem key="tabBarItem" title="Item" id="KUk-A0-s6l"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLN-Of-LtP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" id="eKp-BB-b2D">
+                    <rect key="frame" x="0.0" y="0.0" width="577" height="291"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <attributedString key="attributedText">
+                        <fragment>
+                            <string key="content">From: Dr. Holmes
+Date: October 27, 2015 at 6:00 PM
+
+I've noticed that you experienced several low blood sugar events during Monday mornings for the last few month.
+
+I would like to decrease your bolus ratio from 10 g/unit for to 8 g/unit during Monday mornings to see if that helps any.</string>
+                            <attributes>
+                                <font key="NSFont" size="12" name=".LucidaGrandeUI"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </objects>
             <point key="canvasLocation" x="-472" y="-3127"/>
         </scene>
@@ -300,6 +446,14 @@
                     <view key="view" contentMode="scaleToFill" id="j2A-0Q-UBK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y3Y-Ov-UnR">
+                                <rect key="frame" x="171" y="137" width="51" height="31"/>
+                            </switch>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fjx-cf-DD4">
+                                <rect key="frame" x="228" y="301" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="mFH-bv-Gen"/>
@@ -328,4 +482,10 @@
             <point key="canvasLocation" x="2044" y="216"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="new_bolus_graph" width="188" height="91"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="0oX-hA-0J0"/>
+    </inferredMetricsTieBreakers>
 </document>

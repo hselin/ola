@@ -16,6 +16,8 @@
 		4A0A80501A1C0C7F001C82B6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A0A804E1A1C0C7F001C82B6 /* LaunchScreen.xib */; };
 		4A0A805C1A1C0C7F001C82B6 /* OlaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0A805B1A1C0C7F001C82B6 /* OlaTests.m */; };
 		4A44325F1A1C54DD00D8B70B /* StaticDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A44325E1A1C54DD00D8B70B /* StaticDataTableViewController.m */; };
+		4AAD98F31A1DB834006D7939 /* EmailUIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD98F21A1DB834006D7939 /* EmailUIVC.m */; };
+		4AAD98F61A1DBCB4006D7939 /* DocEmailUIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD98F51A1DBCB4006D7939 /* DocEmailUIVC.m */; };
 		4ABB40D71A1C313400512179 /* DoctorCommTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABB40D61A1C313400512179 /* DoctorCommTVC.m */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,10 @@
 		4A0A805B1A1C0C7F001C82B6 /* OlaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OlaTests.m; sourceTree = "<group>"; };
 		4A44325D1A1C54DD00D8B70B /* StaticDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StaticDataTableViewController.h; sourceTree = "<group>"; };
 		4A44325E1A1C54DD00D8B70B /* StaticDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaticDataTableViewController.m; sourceTree = "<group>"; };
+		4AAD98F11A1DB834006D7939 /* EmailUIVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailUIVC.h; sourceTree = "<group>"; };
+		4AAD98F21A1DB834006D7939 /* EmailUIVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailUIVC.m; sourceTree = "<group>"; };
+		4AAD98F41A1DBCB4006D7939 /* DocEmailUIVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocEmailUIVC.h; sourceTree = "<group>"; };
+		4AAD98F51A1DBCB4006D7939 /* DocEmailUIVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocEmailUIVC.m; sourceTree = "<group>"; };
 		4ABB40D51A1C313400512179 /* DoctorCommTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorCommTVC.h; sourceTree = "<group>"; };
 		4ABB40D61A1C313400512179 /* DoctorCommTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorCommTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +103,10 @@
 				4A0A80461A1C0C7E001C82B6 /* SecondViewController.h */,
 				4A0A80471A1C0C7E001C82B6 /* SecondViewController.m */,
 				4A0A80491A1C0C7E001C82B6 /* Main.storyboard */,
+				4AAD98F41A1DBCB4006D7939 /* DocEmailUIVC.h */,
+				4AAD98F51A1DBCB4006D7939 /* DocEmailUIVC.m */,
+				4AAD98F11A1DB834006D7939 /* EmailUIVC.h */,
+				4AAD98F21A1DB834006D7939 /* EmailUIVC.m */,
 				4A44325D1A1C54DD00D8B70B /* StaticDataTableViewController.h */,
 				4A44325E1A1C54DD00D8B70B /* StaticDataTableViewController.m */,
 				4ABB40D51A1C313400512179 /* DoctorCommTVC.h */,
@@ -239,6 +249,8 @@
 				4A0A80421A1C0C7E001C82B6 /* AppDelegate.m in Sources */,
 				4A44325F1A1C54DD00D8B70B /* StaticDataTableViewController.m in Sources */,
 				4A0A80451A1C0C7E001C82B6 /* FirstViewController.m in Sources */,
+				4AAD98F31A1DB834006D7939 /* EmailUIVC.m in Sources */,
+				4AAD98F61A1DBCB4006D7939 /* DocEmailUIVC.m in Sources */,
 				4A0A803F1A1C0C7E001C82B6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
