@@ -53,9 +53,6 @@
     
     [alert addButtonWithTitle:@"Confirm"];
     [alert show];
-    
-    
-   
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
