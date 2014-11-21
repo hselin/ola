@@ -10,4 +10,7 @@
 
 @interface EmailUIVC : UIViewController
 
+@property NSString *subject;
+@property NSString *to;
+
 @end
