@@ -141,7 +141,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Qh-2E-DoU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1557" y="-708"/>
+            <point key="canvasLocation" x="1411" y="-450"/>
         </scene>
         <!--Your new bolus ratio-->
         <scene sceneID="BOn-9i-ywk">
@@ -221,7 +221,7 @@ to 8 g/unit during Monday mornings.</string>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </objects>
-            <point key="canvasLocation" x="2381" y="-1252"/>
+            <point key="canvasLocation" x="2421" y="-1252"/>
         </scene>
         <!--EmailUIVC-->
         <scene sceneID="Mbl-fY-kz5">
@@ -279,7 +279,7 @@ to 8 g/unit during Monday mornings.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wRi-rZ-DpL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1552" y="-1387"/>
+            <point key="canvasLocation" x="3164" y="-737"/>
         </scene>
         <!--Item-->
         <scene sceneID="l25-6n-iaZ">
@@ -435,57 +435,86 @@ I would like to decrease your bolus ratio from 10 g/unit for to 8 g/unit during 
             </objects>
             <point key="canvasLocation" x="745" y="-708"/>
         </scene>
-        <!--View Controller-->
+        <!--Low blood sugar-->
         <scene sceneID="0k3-MI-1ZB">
             <objects>
                 <viewController id="nDN-uc-Que" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rac-fP-nGT"/>
-                        <viewControllerLayoutGuide type="bottom" id="anO-98-UKY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="j2A-0Q-UBK">
+                    <textView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" id="Ju1-HA-EBO">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y3Y-Ov-UnR">
-                                <rect key="frame" x="171" y="137" width="51" height="31"/>
-                            </switch>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fjx-cf-DD4">
-                                <rect key="frame" x="228" y="301" width="20" height="20"/>
-                            </activityIndicatorView>
-                        </subviews>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="mFH-bv-Gen"/>
+                        <attributedString key="attributedText">
+                            <fragment>
+                                <string key="content">From: Dr. Holmes
+Date: October 20, 2015 at 2:00 PM
+
+Seems your blood sugar levels are trending low recently.
+Please make sure it does not get too low.
+
+I'll keep an eye on this condition through Ola.</string>
+                                <attributes>
+                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <navigationItem key="navigationItem" title="Low blood sugar" id="mFH-bv-Gen">
+                        <barButtonItem key="rightBarButtonItem" title="Reply" id="JfZ-cl-vLN">
+                            <connections>
+                                <segue destination="5yw-Ae-ahN" kind="presentation" id="y7K-ih-pHz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9C6-Nx-iH8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2426" y="-594"/>
         </scene>
-        <!--View Controller-->
+        <!--Your insulin level-->
         <scene sceneID="JjY-R7-ZMz">
             <objects>
                 <viewController id="xIU-HC-Ece" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7v7-XC-P4j"/>
-                        <viewControllerLayoutGuide type="bottom" id="J6d-RD-A1t"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cag-Y3-iRR">
+                    <textView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" id="o5O-jL-Syw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="4ZD-kg-aHk"/>
+                        <attributedString key="attributedText">
+                            <fragment>
+                                <string key="content">From: Dr. Banting
+Date: September 2, 2015 at 1:00 PM
+
+Your lastest blood work results came back.
+Your insulin level is normal, however you should get more exercise.
+ 
+Keep up the good work!
+</string>
+                                <attributes>
+                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <navigationItem key="navigationItem" title="Your insulin level" id="4ZD-kg-aHk">
+                        <barButtonItem key="rightBarButtonItem" title="Reply" id="3Rm-cP-gXi">
+                            <connections>
+                                <segue destination="5yw-Ae-ahN" kind="presentation" id="FTR-gw-IIw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wl3-aO-4fF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2044" y="216"/>
+            <point key="canvasLocation" x="2426" y="82"/>
         </scene>
     </scenes>
     <resources>
         <image name="new_bolus_graph" width="188" height="91"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0oX-hA-0J0"/>
+        <segue reference="y7K-ih-pHz"/>
     </inferredMetricsTieBreakers>
 </document>
