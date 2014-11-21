@@ -7,6 +7,7 @@
 //
 
 #import "DocEmailUIVC.h"
+#import "EmailUIVC.h"
 
 @interface DocEmailUIVC ()
 @property (weak, nonatomic) IBOutlet UIButton *approvebutton;
@@ -77,5 +78,16 @@
         }
     }
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"replyEmail"]) {
+        if ([segue.destinationViewController isKindOfClass:[EmailUIVC class]]) {
+            EmailUIVC *euivc = (EmailUIVC *)segue.destinationViewController;
+            euivc.subject = @"RE: Your new bolus ratio";
+            euivc.to = @"Dr. Holmes";
+        }
+    }
+}
+
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "DoctorCommTVC.h"
+#import "EmailUIVC.h"
 
 @interface DoctorCommTVC ()
 @property (strong, nonatomic) IBOutletCollection(UITableViewCell) NSArray *staticCells;
@@ -191,6 +192,15 @@
     [self reloadDataAnimated:YES];
     
     //[searchBar resignFirstResponder]; // if you want the keyboard to go away
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"newEmail"]) {
+        if ([segue.destinationViewController isKindOfClass:[EmailUIVC class]]) {
+            EmailUIVC *euivc = (EmailUIVC *)segue.destinationViewController;
+            euivc.subject = @"New Message";
+        }
+    }
 }
 
 @end

@@ -10,7 +10,9 @@
 
 @interface EmailUIVC ()
 @property (weak, nonatomic) IBOutlet UITextView *emailtextinput;
-
+@property (weak, nonatomic) IBOutlet UILabel *subjectLabel;
+@property (weak, nonatomic) IBOutlet UITextField *toInput;
+@property (weak, nonatomic) IBOutlet UITextField *subjectInput;
 @end
 
 @implementation EmailUIVC
@@ -20,6 +22,10 @@
     // Do any additional setup after loading the view.
     
     [self.emailtextinput becomeFirstResponder];
+    
+    [self.subjectLabel setText:self.subject];
+    [self.subjectInput setText:self.subject];
+    [self.toInput setText:self.to];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,6 +48,9 @@
 }
 - (IBAction)cancelbutton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (IBAction)subjectInputEditingChanged:(UITextField *)sender {
+    [self.subjectLabel setText:sender.text];
 }
 
 @end
