@@ -7,12 +7,44 @@
 //
 
 #import "FoodItemsTVC.h"
+#import <CommonCrypto/CommonDigest.h>
+#import "CustomIOS7AlertView.h"
 
 @interface FoodItemsTVC ()
+
+@property (strong, nonatomic) NSMutableArray *fooditems;
 
 @end
 
 @implementation FoodItemsTVC
+
+@synthesize totalCarbs = _totalCarbs; // because we provide setter AND getter
+
+- (NSUInteger)totalCarbs
+{
+    _totalCarbs = 0;
+    
+    for(int i = 0; i < [self numFoodItems]; i++)
+    {
+        FoodItem *fi = [self foodItemAtIndex:i];
+        
+        _totalCarbs += fi.carbCount;
+    }
+    
+    return _totalCarbs;
+}
+
+- (void)setTotalCarbs:(NSUInteger)val
+{
+    _totalCarbs = val;
+}
+
+- (void) updateTitle
+{
+    NSString *newTitle = [NSString stringWithFormat: @"Food Items (%lu g)", self.totalCarbs];
+    
+    self.title = newTitle;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -21,7 +53,11 @@
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+    //self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.fooditems = [[NSMutableArray alloc] init];
+    [self updateTitle];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,27 +65,61 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self numFoodItems];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
-    //self.imageView.image = chosenImage;
-    
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
+    
+    unsigned char result[CC_MD5_DIGEST_LENGTH];
+    NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(chosenImage)];
+    CC_MD5([imageData bytes], [imageData length], result);
+    NSString *imageHash = [NSString stringWithFormat:
+                           @"%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X",
+                           result[0], result[1], result[2], result[3],
+                           result[4], result[5], result[6], result[7],
+                           result[8], result[9], result[10], result[11],
+                           result[12], result[13], result[14], result[15]
+                           ];
+    
+    unsigned long hashVal = result[0] + result[1] + result[2] + result[3] + result[4] + result[5] + result[6] + result[7] + result[8] + result[9] + result[10] + result[11] + result[12] + result[13] + result[14] + result[15];
+
+    NSLog(@"imageHash: %@", imageHash);
+    NSLog(@"imageHash Int: %lu", hashVal);
+    NSLog(@"imageHash Int: %lu", (hashVal % 5));
+    
+    switch(hashVal % 5)
+    {
+        case 0:
+            [self addFoodItemName:@"Banana" andCarbCount:27];
+            break;
+        case 1:
+            [self addFoodItemName:@"Orange" andCarbCount:11];
+            break;
+        case 2:
+            [self addFoodItemName:@"Apple" andCarbCount:25];
+            break;
+        case 3:
+            [self addFoodItemName:@"Tomato" andCarbCount:5];
+            break;
+        case 4:
+            [self addFoodItemName:@"Pear" andCarbCount:27];
+            break;
+    }
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
@@ -58,10 +128,8 @@
     
 }
 
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+-(void)handleFoodItemInputTypeAlertView:(UIAlertView *)alertView withButtonIndex:(NSInteger)buttonIndex
 {
-    NSLog(@"Button Index =%ld",buttonIndex);
-    
     if (buttonIndex == 0)
     {
         NSLog(@"You have clicked 0");
@@ -82,44 +150,158 @@
     if (buttonIndex == 2)
     {
         NSLog(@"You have clicked carb count!");
+        
+        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Item Name and Carb Count"
+                                                         message:@""
+                                                        delegate:self
+                                               cancelButtonTitle:@"Cancel"
+                                               otherButtonTitles:@"Add", nil];
+        
+        alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+        [alert textFieldAtIndex:1].secureTextEntry = NO;
+        [alert textFieldAtIndex:0].placeholder = @"Item Name";
+        [alert textFieldAtIndex:1].placeholder = @"Carb Count";
+        [alert textFieldAtIndex:1].keyboardType = UIKeyboardTypeNumberPad;
+        alert.tag = 1;
+        
+        
+        
+        /*
+         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Forgot Password" message:@"Please enter the email ID associated with your Hngre account." delegate:self cancelButtonTitle:@"Here you go" otherButtonTitles:@"No, thanks", nil];
+         alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
+         [alert textFieldAtIndex:1].secureTextEntry = NO; //Will disable secure text entry for second textfield.
+         [alert textFieldAtIndex:0].placeholder = @"First Placeholder"; //Will replace "Username"
+         [alert textFieldAtIndex:1].placeholder = @"Second Placeholder"; //Will replace "Password"
+         */
+        
+        [alert show];
     }
     
     if (buttonIndex == 3)
     {
         NSLog(@"You have clicked food name!");
+
+        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Food Name"
+                                                         message:@""
+                                                        delegate:self
+                                               cancelButtonTitle:@"Cancel"
+                                               otherButtonTitles:@"Search", nil];
+        
+        alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+        [alert textFieldAtIndex:0].placeholder = @"Food Name";
+        alert.tag = 2;
+        
+        [alert show];
+    }
+   
+}
+
+- (void)handleCarbCountInputAlertView:(UIAlertView *)alertView withButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        NSLog(@"You have clicked 0");
+    }
+    
+    if (buttonIndex == 1)
+    {
+        NSLog(@"You have clicked add!");
+        NSString *name = [alertView textFieldAtIndex:0].text;
+        NSUInteger carbCount = [[alertView textFieldAtIndex:1].text intValue];
+        [self addFoodItemName:name andCarbCount:(carbCount)];
+        
+    }
+
+}
+
+- (void)handleFoodNameInputAlertView:(UIAlertView *)alertView withButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0)
+    {
+        NSLog(@"You have clicked 0");
+    }
+    
+    if (buttonIndex == 1)
+    {
+        NSLog(@"You have clicked search!");
+        CustomIOS7AlertView *alertView = [[CustomIOS7AlertView alloc] init];
+        [alertView show];
+        
     }
 }
 
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"Button Index =%ld",buttonIndex);
     
-    // Configure the cell...
+    if(alertView.tag == 0)
+        [self handleFoodItemInputTypeAlertView:alertView withButtonIndex:buttonIndex];
+
+    if(alertView.tag == 1)
+        [self handleCarbCountInputAlertView:alertView withButtonIndex:buttonIndex];
+    
+    if(alertView.tag == 2)
+        [self handleFoodNameInputAlertView:alertView withButtonIndex:buttonIndex];
+    
+}
+
+- (void) addFoodItemName:(NSString *)name andCarbCount:(NSUInteger)carbCount
+{
+    FoodItem *fi = [[FoodItem alloc] initWithName:name andCarbCount:carbCount];
+    
+    [self.fooditems addObject:fi];
+    
+    [self.tableView reloadData];
+    [self updateTitle];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Food Item Cell" forIndexPath:indexPath];
+    
+    FoodItem *fi = [self foodItemAtIndex:indexPath.row];
+    
+    cell.textLabel.text = fi.name;
+    cell.detailTextLabel.text = [NSString stringWithFormat: @"%lu g", fi.carbCount];
     
     return cell;
 }
-*/
 
-/*
+- (NSUInteger) numFoodItems
+{
+    return [self.fooditems count];
+}
+
+- (FoodItem *) foodItemAtIndex:(NSInteger) index {
+    return [self.fooditems objectAtIndex:index];
+}
+
+-(void) removeFoodItemAtIndex:(NSInteger) index {
+    [self.fooditems removeObjectAtIndex:index];
+    [self updateTitle];
+}
+
+
+
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
+
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        [self removeFoodItemAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -155,9 +337,8 @@
     [alert addButtonWithTitle:@"Food Camera"];
     [alert addButtonWithTitle:@"Carb count"];
     [alert addButtonWithTitle:@"Food name"];
+    alert.tag = 0;
     [alert show];
-    
-    
 }
 
 @end
