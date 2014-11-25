@@ -11,6 +11,7 @@
 
 @interface DoctorCommTVC ()
 @property (strong, nonatomic) IBOutletCollection(UITableViewCell) NSArray *staticCells;
+@property (weak, nonatomic) IBOutlet UIImageView *unreadimage;
 
 @end
 
@@ -201,6 +202,10 @@
             euivc.subject = @"New Message";
         }
     }
+    if ([segue.identifier isEqualToString:@"new bolus ratio"]) {
+        self.unreadimage.image = nil;
+    }
+    
 }
 
 @end

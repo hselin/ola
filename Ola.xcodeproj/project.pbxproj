@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A03965F1A2442EC00E146AE /* EmailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A03965E1A2442EC00E146AE /* EmailTVC.m */; };
 		4A0A803F1A1C0C7E001C82B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0A803E1A1C0C7E001C82B6 /* main.m */; };
 		4A0A80421A1C0C7E001C82B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0A80411A1C0C7E001C82B6 /* AppDelegate.m */; };
 		4A0A80451A1C0C7E001C82B6 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0A80441A1C0C7E001C82B6 /* FirstViewController.m */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A03965D1A2442EC00E146AE /* EmailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailTVC.h; sourceTree = "<group>"; };
+		4A03965E1A2442EC00E146AE /* EmailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailTVC.m; sourceTree = "<group>"; };
 		4A0A80391A1C0C7E001C82B6 /* Ola.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ola.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A0A803D1A1C0C7E001C82B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A0A803E1A1C0C7E001C82B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 				4AFF33691A1F2A260024704A /* DocEmail2UIVC.m */,
 				4AAD98F41A1DBCB4006D7939 /* DocEmailUIVC.h */,
 				4AAD98F51A1DBCB4006D7939 /* DocEmailUIVC.m */,
+				4A03965D1A2442EC00E146AE /* EmailTVC.h */,
+				4A03965E1A2442EC00E146AE /* EmailTVC.m */,
 				4AAD98F11A1DB834006D7939 /* EmailUIVC.h */,
 				4AAD98F21A1DB834006D7939 /* EmailUIVC.m */,
 				4A44325D1A1C54DD00D8B70B /* StaticDataTableViewController.h */,
@@ -278,6 +283,7 @@
 				4A0A80421A1C0C7E001C82B6 /* AppDelegate.m in Sources */,
 				4AFF336A1A1F2A260024704A /* DocEmail2UIVC.m in Sources */,
 				4A44325F1A1C54DD00D8B70B /* StaticDataTableViewController.m in Sources */,
+				4A03965F1A2442EC00E146AE /* EmailTVC.m in Sources */,
 				4A0A80451A1C0C7E001C82B6 /* FirstViewController.m in Sources */,
 				4A294DD31A22A8AE00CDBAFB /* FoodItem.m in Sources */,
 				4AAD98F31A1DB834006D7939 /* EmailUIVC.m in Sources */,
@@ -341,7 +347,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iOS Development: Albert Chen (5NNP64ZMSX)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iOS Development: Albert Chen (5NNP64ZMSX)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -382,7 +389,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iOS Development: Albert Chen (5NNP64ZMSX)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iOS Development: Albert Chen (5NNP64ZMSX)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -405,9 +413,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Ola/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -416,9 +426,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Ola/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

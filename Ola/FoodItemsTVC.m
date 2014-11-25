@@ -13,7 +13,12 @@
 @interface FoodItemsTVC ()
 
 @property (strong, nonatomic) NSMutableArray *fooditems;
+@property (weak, nonatomic) IBOutlet UITableView *foodNameTableView;
 
+@property (strong, nonatomic) CustomIOS7AlertView *foodNameAlertView;
+
+
+@property (strong, nonatomic) NSMutableArray *foodNames;
 @end
 
 @implementation FoodItemsTVC
@@ -46,6 +51,46 @@
     self.title = newTitle;
 }
 
+- (NSUInteger) numFoodItems
+{
+    return [self.fooditems count];
+}
+
+- (NSUInteger) numFoodNames
+{
+    return [self.foodNames count];
+}
+
+- (FoodItem *) foodItemAtIndex:(NSInteger) index {
+    return [self.fooditems objectAtIndex:index];
+}
+
+- (FoodItem *) foodNameAtIndex:(NSInteger) index {
+    return [self.foodNames objectAtIndex:index];
+}
+
+-(void) removeFoodItemAtIndex:(NSInteger) index {
+    [self.fooditems removeObjectAtIndex:index];
+    //[self updateTitle];
+}
+
+- (void) addFoodItem:(NSString *)name andCarbCount:(NSUInteger)carbCount
+{
+    FoodItem *fi = [[FoodItem alloc] initWithName:name andCarbCount:carbCount];
+    
+    [self.fooditems addObject:fi];
+    
+    [self.tableView reloadData];
+    //[self updateTitle];
+}
+
+- (void) addFoodName:(NSString *)name andCarbCount:(NSUInteger)carbCount
+{
+    FoodItem *fi = [[FoodItem alloc] initWithName:name andCarbCount:carbCount];
+    
+    [self.foodNames addObject:fi];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -55,9 +100,24 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
 
     //self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+    self.tableView.tag = 0;
     self.fooditems = [[NSMutableArray alloc] init];
-    [self updateTitle];
+    
+    
+    self.foodNames = [[NSMutableArray alloc] init];
+    
+    [self addFoodName:@"Apple pie (1 slice)" andCarbCount:50];
+    [self addFoodName:@"Beer (1 can)" andCarbCount:13];
+    [self addFoodName:@"Cheeseburger" andCarbCount:30];
+    [self addFoodName:@"Mapo Tofu" andCarbCount:8];
+    [self addFoodName:@"Soft Drink (21 fl oz)" andCarbCount:46];
+    
+    self.foodNameTableView.tag = 1;
+    [self.foodNameTableView setDelegate:self];
+    [self.foodNameTableView setDataSource:self];
+    //[self.foodNameTableView reloadData];
+    //[self updateTitle];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -76,7 +136,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [self numFoodItems];
+    if(tableView.tag == 0)
+        return [self numFoodItems];
+    
+    if(tableView.tag == 1)
+        return [self numFoodNames];
+    
+    return 0;
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
@@ -105,19 +171,19 @@
     switch(hashVal % 5)
     {
         case 0:
-            [self addFoodItemName:@"Banana" andCarbCount:27];
+            [self addFoodItem:@"Banana" andCarbCount:27];
             break;
         case 1:
-            [self addFoodItemName:@"Orange" andCarbCount:11];
+            [self addFoodItem:@"Orange" andCarbCount:11];
             break;
         case 2:
-            [self addFoodItemName:@"Apple" andCarbCount:25];
+            [self addFoodItem:@"Apple" andCarbCount:25];
             break;
         case 3:
-            [self addFoodItemName:@"Tomato" andCarbCount:5];
+            [self addFoodItem:@"Tomato" andCarbCount:5];
             break;
         case 4:
-            [self addFoodItemName:@"Pear" andCarbCount:27];
+            [self addFoodItem:@"Pear" andCarbCount:27];
             break;
     }
 }
@@ -208,7 +274,7 @@
         NSLog(@"You have clicked add!");
         NSString *name = [alertView textFieldAtIndex:0].text;
         NSUInteger carbCount = [[alertView textFieldAtIndex:1].text intValue];
-        [self addFoodItemName:name andCarbCount:(carbCount)];
+        [self addFoodItem:name andCarbCount:(carbCount)];
         
     }
 
@@ -224,9 +290,10 @@
     if (buttonIndex == 1)
     {
         NSLog(@"You have clicked search!");
-        CustomIOS7AlertView *alertView = [[CustomIOS7AlertView alloc] init];
-        [alertView show];
-        
+        self.foodNameAlertView = [[CustomIOS7AlertView alloc] init];
+        [self.foodNameAlertView setContainerView:self.foodNameTableView];
+        [self.foodNameAlertView setButtonTitles:[NSMutableArray arrayWithObjects:@"Cancel", nil]];
+        [self.foodNameAlertView show];
     }
 }
 
@@ -245,40 +312,38 @@
     
 }
 
-- (void) addFoodItemName:(NSString *)name andCarbCount:(NSUInteger)carbCount
-{
-    FoodItem *fi = [[FoodItem alloc] initWithName:name andCarbCount:carbCount];
-    
-    [self.fooditems addObject:fi];
-    
-    [self.tableView reloadData];
-    [self updateTitle];
-}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Food Item Cell" forIndexPath:indexPath];
     
-    FoodItem *fi = [self foodItemAtIndex:indexPath.row];
+    if(tableView.tag == 0)
+    {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Food Item Cell" forIndexPath:indexPath];
     
-    cell.textLabel.text = fi.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat: @"%lu g", fi.carbCount];
+        FoodItem *fi = [self foodItemAtIndex:indexPath.row];
     
-    return cell;
+        cell.textLabel.text = fi.name;
+        cell.detailTextLabel.text = [NSString stringWithFormat: @"%lu g", fi.carbCount];
+        
+        return cell;
+    }
+    
+    if(tableView.tag == 1)
+    {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Food Name Cell" forIndexPath:indexPath];
+        
+        FoodItem *fi = [self foodNameAtIndex:indexPath.row];
+        
+        cell.textLabel.text = fi.name;
+        cell.detailTextLabel.text = [NSString stringWithFormat: @"%lu g", fi.carbCount];
+        
+        return cell;
+    }
+    
+    return NULL;
 }
 
-- (NSUInteger) numFoodItems
-{
-    return [self.fooditems count];
-}
 
-- (FoodItem *) foodItemAtIndex:(NSInteger) index {
-    return [self.fooditems objectAtIndex:index];
-}
-
--(void) removeFoodItemAtIndex:(NSInteger) index {
-    [self.fooditems removeObjectAtIndex:index];
-    [self updateTitle];
-}
 
 
 
@@ -286,20 +351,40 @@
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
-    return YES;
+    if(tableView.tag == 0)
+        return YES;
+    
+    return NO;
 }
 
 
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [self removeFoodItemAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    if(tableView.tag == 0)
+    {
+        if (editingStyle == UITableViewCellEditingStyleDelete) {
+            // Delete the row from the data source
+            [self removeFoodItemAtIndex:indexPath.row];
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+ 
     }
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if(tableView.tag == 1)
+    {
+        [self.foodNameAlertView close];
+        FoodItem *fi = [self foodNameAtIndex:indexPath.row];
+        [self addFoodItem:fi.name andCarbCount:fi.carbCount];
+    }
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 
