@@ -208,7 +208,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Doctor Communication" id="h27-mS-Vwb">
-                        <barButtonItem key="rightBarButtonItem" title="New mail" id="9ah-C3-L97">
+                        <barButtonItem key="rightBarButtonItem" title="Compose Email" id="9ah-C3-L97">
                             <connections>
                                 <segue destination="5yw-Ae-ahN" kind="presentation" identifier="newEmail" id="0IM-UK-Gch"/>
                             </connections>
@@ -490,6 +490,32 @@ to 8 g/unit during Monday mornings.</string>
             </objects>
             <point key="canvasLocation" x="1178" y="769"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="hNc-wi-2Co">
+            <objects>
+                <viewController id="bfh-BR-ENL" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="deH-Wo-N2j"/>
+                        <viewControllerLayoutGuide type="bottom" id="ExO-Ep-5y4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ujG-GS-smQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="new_bolus_graph" translatesAutoresizingMaskIntoConstraints="NO" id="Kla-KD-2yA">
+                                <rect key="frame" x="222" y="226" width="188" height="91"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="icon_58x58.png" translatesAutoresizingMaskIntoConstraints="NO" id="sWo-h2-U9A">
+                                <rect key="frame" x="226" y="398" width="58" height="58"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TQF-EA-sjy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044" y="1359"/>
+        </scene>
         <!--Item-->
         <scene sceneID="GW8-Ha-ipg">
             <objects>
@@ -643,6 +669,7 @@ Keep up the good work!
         </scene>
     </scenes>
     <resources>
+        <image name="icon_58x58.png" width="58" height="58"/>
         <image name="moo" width="12" height="12"/>
         <image name="new_bolus_graph" width="188" height="91"/>
         <image name="piechart" width="159" height="126"/>

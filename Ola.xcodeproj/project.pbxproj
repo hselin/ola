@@ -13,7 +13,6 @@
 		4A0A80451A1C0C7E001C82B6 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0A80441A1C0C7E001C82B6 /* FirstViewController.m */; };
 		4A0A80481A1C0C7E001C82B6 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0A80471A1C0C7E001C82B6 /* SecondViewController.m */; };
 		4A0A804B1A1C0C7E001C82B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A0A80491A1C0C7E001C82B6 /* Main.storyboard */; };
-		4A0A804D1A1C0C7E001C82B6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A0A804C1A1C0C7E001C82B6 /* Images.xcassets */; };
 		4A0A80501A1C0C7F001C82B6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A0A804E1A1C0C7F001C82B6 /* LaunchScreen.xib */; };
 		4A0A805C1A1C0C7F001C82B6 /* OlaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0A805B1A1C0C7F001C82B6 /* OlaTests.m */; };
 		4A294DD31A22A8AE00CDBAFB /* FoodItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A294DD21A22A8AE00CDBAFB /* FoodItem.m */; };
@@ -22,6 +21,7 @@
 		4AAD98F31A1DB834006D7939 /* EmailUIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD98F21A1DB834006D7939 /* EmailUIVC.m */; };
 		4AAD98F61A1DBCB4006D7939 /* DocEmailUIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD98F51A1DBCB4006D7939 /* DocEmailUIVC.m */; };
 		4ABB40D71A1C313400512179 /* DoctorCommTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABB40D61A1C313400512179 /* DoctorCommTVC.m */; };
+		4AC8B4D21A2455C20064398E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AC8B4D11A2455C20064398E /* Images.xcassets */; };
 		4ADB01E71A1FCE1600E55520 /* FoodItemsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB01E61A1FCE1600E55520 /* FoodItemsTVC.m */; };
 		4AFF336A1A1F2A260024704A /* DocEmail2UIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF33691A1F2A260024704A /* DocEmail2UIVC.m */; };
 		4AFF336D1A1F2A410024704A /* DocEmail3UIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF336C1A1F2A410024704A /* DocEmail3UIVC.m */; };
@@ -50,7 +50,6 @@
 		4A0A80461A1C0C7E001C82B6 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		4A0A80471A1C0C7E001C82B6 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		4A0A804A1A1C0C7E001C82B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4A0A804C1A1C0C7E001C82B6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4A0A804F1A1C0C7F001C82B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4A0A80551A1C0C7F001C82B6 /* OlaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OlaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A0A805A1A1C0C7F001C82B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,6 +66,7 @@
 		4AAD98F51A1DBCB4006D7939 /* DocEmailUIVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DocEmailUIVC.m; sourceTree = "<group>"; };
 		4ABB40D51A1C313400512179 /* DoctorCommTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorCommTVC.h; sourceTree = "<group>"; };
 		4ABB40D61A1C313400512179 /* DoctorCommTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorCommTVC.m; sourceTree = "<group>"; };
+		4AC8B4D11A2455C20064398E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4ADB01E51A1FCE1600E55520 /* FoodItemsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodItemsTVC.h; sourceTree = "<group>"; };
 		4ADB01E61A1FCE1600E55520 /* FoodItemsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodItemsTVC.m; sourceTree = "<group>"; };
 		4AFF33681A1F2A260024704A /* DocEmail2UIVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocEmail2UIVC.h; sourceTree = "<group>"; };
@@ -136,12 +136,12 @@
 				4A03965D1A2442EC00E146AE /* EmailTVC.h */,
 				4A03965E1A2442EC00E146AE /* EmailTVC.m */,
 				4AAD98F11A1DB834006D7939 /* EmailUIVC.h */,
+				4AC8B4D11A2455C20064398E /* Images.xcassets */,
 				4AAD98F21A1DB834006D7939 /* EmailUIVC.m */,
 				4A44325D1A1C54DD00D8B70B /* StaticDataTableViewController.h */,
 				4A44325E1A1C54DD00D8B70B /* StaticDataTableViewController.m */,
 				4ABB40D51A1C313400512179 /* DoctorCommTVC.h */,
 				4ABB40D61A1C313400512179 /* DoctorCommTVC.m */,
-				4A0A804C1A1C0C7E001C82B6 /* Images.xcassets */,
 				4A0A804E1A1C0C7F001C82B6 /* LaunchScreen.xib */,
 				4A0A803C1A1C0C7E001C82B6 /* Supporting Files */,
 			);
@@ -255,9 +255,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AC8B4D21A2455C20064398E /* Images.xcassets in Resources */,
 				4A0A804B1A1C0C7E001C82B6 /* Main.storyboard in Resources */,
 				4A0A80501A1C0C7F001C82B6 /* LaunchScreen.xib in Resources */,
-				4A0A804D1A1C0C7E001C82B6 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,7 +411,8 @@
 		4A0A80601A1C0C7F001C82B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Ola/Info.plist;
@@ -424,7 +425,8 @@
 		4A0A80611A1C0C7F001C82B6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Ola/Info.plist;
