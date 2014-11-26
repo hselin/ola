@@ -18,6 +18,7 @@
 		4A294DD31A22A8AE00CDBAFB /* FoodItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A294DD21A22A8AE00CDBAFB /* FoodItem.m */; };
 		4A44325F1A1C54DD00D8B70B /* StaticDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A44325E1A1C54DD00D8B70B /* StaticDataTableViewController.m */; };
 		4A59969E1A23F67F0086FD35 /* CustomIOS7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A59969D1A23F67F0086FD35 /* CustomIOS7AlertView.m */; };
+		4A8EEC8F1A2574A200D7325E /* InsulinInjectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8EEC8E1A2574A200D7325E /* InsulinInjectionVC.m */; };
 		4AAD98F31A1DB834006D7939 /* EmailUIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD98F21A1DB834006D7939 /* EmailUIVC.m */; };
 		4AAD98F61A1DBCB4006D7939 /* DocEmailUIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD98F51A1DBCB4006D7939 /* DocEmailUIVC.m */; };
 		4ABB40D71A1C313400512179 /* DoctorCommTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABB40D61A1C313400512179 /* DoctorCommTVC.m */; };
@@ -60,6 +61,8 @@
 		4A44325E1A1C54DD00D8B70B /* StaticDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaticDataTableViewController.m; sourceTree = "<group>"; };
 		4A59969C1A23F67F0086FD35 /* CustomIOS7AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomIOS7AlertView.h; sourceTree = "<group>"; };
 		4A59969D1A23F67F0086FD35 /* CustomIOS7AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomIOS7AlertView.m; sourceTree = "<group>"; };
+		4A8EEC8D1A2574A200D7325E /* InsulinInjectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsulinInjectionVC.h; sourceTree = "<group>"; };
+		4A8EEC8E1A2574A200D7325E /* InsulinInjectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsulinInjectionVC.m; sourceTree = "<group>"; };
 		4AAD98F11A1DB834006D7939 /* EmailUIVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailUIVC.h; sourceTree = "<group>"; };
 		4AAD98F21A1DB834006D7939 /* EmailUIVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailUIVC.m; sourceTree = "<group>"; };
 		4AAD98F41A1DBCB4006D7939 /* DocEmailUIVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocEmailUIVC.h; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 				4A0A80441A1C0C7E001C82B6 /* FirstViewController.m */,
 				4A0A80461A1C0C7E001C82B6 /* SecondViewController.h */,
 				4A0A80471A1C0C7E001C82B6 /* SecondViewController.m */,
+				4A8EEC8D1A2574A200D7325E /* InsulinInjectionVC.h */,
+				4A8EEC8E1A2574A200D7325E /* InsulinInjectionVC.m */,
 				4A0A80491A1C0C7E001C82B6 /* Main.storyboard */,
 				4ADB01E51A1FCE1600E55520 /* FoodItemsTVC.h */,
 				4ADB01E61A1FCE1600E55520 /* FoodItemsTVC.m */,
@@ -289,6 +294,7 @@
 				4AAD98F31A1DB834006D7939 /* EmailUIVC.m in Sources */,
 				4AAD98F61A1DBCB4006D7939 /* DocEmailUIVC.m in Sources */,
 				4A0A803F1A1C0C7E001C82B6 /* main.m in Sources */,
+				4A8EEC8F1A2574A200D7325E /* InsulinInjectionVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

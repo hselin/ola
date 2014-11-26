@@ -13,4 +13,6 @@
 
 @property (nonatomic, readonly) NSUInteger totalCarbs;
 
+-(void)removeAllFoodItems;
+
 @end

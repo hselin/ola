@@ -9,6 +9,7 @@
 #import "FoodItemsTVC.h"
 #import <CommonCrypto/CommonDigest.h>
 #import "CustomIOS7AlertView.h"
+#import "InsulinInjectionVC.h"
 
 @interface FoodItemsTVC ()
 
@@ -72,6 +73,11 @@
 -(void) removeFoodItemAtIndex:(NSInteger) index {
     [self.fooditems removeObjectAtIndex:index];
     //[self updateTitle];
+}
+
+-(void) removeAllFoodItems {
+    [self.fooditems removeAllObjects];
+    [self.tableView reloadData];
 }
 
 - (void) addFoodItem:(NSString *)name andCarbCount:(NSUInteger)carbCount
@@ -153,7 +159,7 @@
     
     unsigned char result[CC_MD5_DIGEST_LENGTH];
     NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(chosenImage)];
-    CC_MD5([imageData bytes], [imageData length], result);
+    CC_MD5([imageData bytes], (CC_LONG)[imageData length], result);
     NSString *imageHash = [NSString stringWithFormat:
                            @"%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X",
                            result[0], result[1], result[2], result[3],
@@ -425,5 +431,16 @@
     alert.tag = 0;
     [alert show];
 }
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"insulinInjection"]) {
+        if ([segue.destinationViewController isKindOfClass:[InsulinInjectionVC class]]) {
+            InsulinInjectionVC *iivc = (InsulinInjectionVC *)segue.destinationViewController;
+            iivc.carbCount = self.totalCarbs;
+        }
+    }
+}
+
 
 @end
