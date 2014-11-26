@@ -85,7 +85,7 @@
                     </prototypes>
                 </tableView>
             </objects>
-            <point key="canvasLocation" x="-162" y="-2699"/>
+            <point key="canvasLocation" x="-1586" y="-3971"/>
         </scene>
         <!--Insulin Injection-->
         <scene sceneID="hjA-6L-XzJ">
@@ -201,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ipF-AG-Bcl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-162" y="-3441"/>
+            <point key="canvasLocation" x="-754" y="-3971"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -223,7 +223,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1076" y="-1280"/>
+            <point key="canvasLocation" x="-3260" y="-1656"/>
         </scene>
         <!--Doctor Communication-->
         <scene sceneID="zTA-vH-IY1">
@@ -349,7 +349,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Qh-2E-DoU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1323" y="-462"/>
+            <point key="canvasLocation" x="-1349" y="-1612"/>
         </scene>
         <!--Your new bolus ratio-->
         <scene sceneID="BOn-9i-ywk">
@@ -442,7 +442,7 @@ to 8 g/unit during Monday mornings.</string>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </objects>
-            <point key="canvasLocation" x="2421" y="-1252"/>
+            <point key="canvasLocation" x="-347" y="-1612"/>
         </scene>
         <!--EmailUIVC-->
         <scene sceneID="Mbl-fY-kz5">
@@ -562,7 +562,7 @@ to 8 g/unit during Monday mornings.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wRi-rZ-DpL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3332" y="-993"/>
+            <point key="canvasLocation" x="957" y="-1234"/>
         </scene>
         <!--Home-->
         <scene sceneID="l25-6n-iaZ">
@@ -605,7 +605,7 @@ to 8 g/unit during Monday mornings.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="092-Ot-Pri" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-532" y="64"/>
+            <point key="canvasLocation" x="-2382" y="464"/>
         </scene>
         <!--Item-->
         <scene sceneID="GW8-Ha-ipg">
@@ -624,7 +624,7 @@ to 8 g/unit during Monday mornings.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nms-vn-V5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1588" y="-2821"/>
+            <point key="canvasLocation" x="-2382" y="-3189"/>
         </scene>
         <!--Item-->
         <scene sceneID="Kjg-Ax-whS">
@@ -643,7 +643,7 @@ to 8 g/unit during Monday mornings.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lxi-NM-fMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2586" y="-2806"/>
+            <point key="canvasLocation" x="-2382" y="-2390"/>
         </scene>
         <!--Doctor Communication-->
         <scene sceneID="Ozd-AP-DC8">
@@ -662,7 +662,7 @@ to 8 g/unit during Monday mornings.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="19V-MS-Wvz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="745" y="-708"/>
+            <point key="canvasLocation" x="-2391" y="-1612"/>
         </scene>
         <!--Low blood sugar-->
         <scene sceneID="0k3-MI-1ZB">
@@ -699,7 +699,7 @@ I'll keep an eye on this condition through Ola.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9C6-Nx-iH8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2426" y="-594"/>
+            <point key="canvasLocation" x="-1342" y="-770"/>
         </scene>
         <!--Your insulin level-->
         <scene sceneID="JjY-R7-ZMz">
@@ -737,7 +737,7 @@ Keep up the good work!
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wl3-aO-4fF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2426" y="82"/>
+            <point key="canvasLocation" x="-347" y="-770"/>
         </scene>
         <!--Food-->
         <scene sceneID="hgc-w3-7ZI">
@@ -756,7 +756,7 @@ Keep up the good work!
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JqE-0w-Aa3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-974" y="-2699"/>
+            <point key="canvasLocation" x="-2382" y="-3971"/>
         </scene>
     </scenes>
     <resources>
@@ -766,6 +766,6 @@ Keep up the good work!
         <image name="std_wave" width="120" height="70"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0IM-UK-Gch"/>
+        <segue reference="FTR-gw-IIw"/>
     </inferredMetricsTieBreakers>
 </document>
