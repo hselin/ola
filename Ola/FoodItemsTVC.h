@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "FoodItem.h"
 
-@interface FoodItemsTVC : UITableViewController <UIAlertViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface FoodItemsTVC : UITableViewController <UIAlertViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,
+UITextFieldDelegate>
 
 @property (nonatomic, readonly) NSUInteger totalCarbs;
 

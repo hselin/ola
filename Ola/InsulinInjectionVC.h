@@ -14,5 +14,9 @@ UITextFieldDelegate>
 @property (nonatomic) NSUInteger carbCount;
 @property (nonatomic) NSUInteger insulinCount;
 @property (nonatomic) NSUInteger recommendedInsulinCount;
+
+@property (nonatomic) NSUInteger minInsulinCount;
+@property (nonatomic) NSUInteger maxInsulinCount;
+
 @property (nonatomic) NSString *waveFormSelectionName;
 @end

@@ -23,6 +23,7 @@
 		4AAD98F61A1DBCB4006D7939 /* DocEmailUIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD98F51A1DBCB4006D7939 /* DocEmailUIVC.m */; };
 		4ABB40D71A1C313400512179 /* DoctorCommTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ABB40D61A1C313400512179 /* DoctorCommTVC.m */; };
 		4AC8B4D21A2455C20064398E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AC8B4D11A2455C20064398E /* Images.xcassets */; };
+		4AD222601A266C48008AEB36 /* notes.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD2225F1A266C48008AEB36 /* notes.m */; };
 		4ADB01E71A1FCE1600E55520 /* FoodItemsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADB01E61A1FCE1600E55520 /* FoodItemsTVC.m */; };
 		4AFF336A1A1F2A260024704A /* DocEmail2UIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF33691A1F2A260024704A /* DocEmail2UIVC.m */; };
 		4AFF336D1A1F2A410024704A /* DocEmail3UIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF336C1A1F2A410024704A /* DocEmail3UIVC.m */; };
@@ -70,6 +71,7 @@
 		4ABB40D51A1C313400512179 /* DoctorCommTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorCommTVC.h; sourceTree = "<group>"; };
 		4ABB40D61A1C313400512179 /* DoctorCommTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorCommTVC.m; sourceTree = "<group>"; };
 		4AC8B4D11A2455C20064398E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4AD2225F1A266C48008AEB36 /* notes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = notes.m; sourceTree = "<group>"; };
 		4ADB01E51A1FCE1600E55520 /* FoodItemsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodItemsTVC.h; sourceTree = "<group>"; };
 		4ADB01E61A1FCE1600E55520 /* FoodItemsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodItemsTVC.m; sourceTree = "<group>"; };
 		4AFF33681A1F2A260024704A /* DocEmail2UIVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DocEmail2UIVC.h; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				4A0A80471A1C0C7E001C82B6 /* SecondViewController.m */,
 				4A8EEC8D1A2574A200D7325E /* InsulinInjectionVC.h */,
 				4A8EEC8E1A2574A200D7325E /* InsulinInjectionVC.m */,
+				4AD2225F1A266C48008AEB36 /* notes.m */,
 				4A0A80491A1C0C7E001C82B6 /* Main.storyboard */,
 				4ADB01E51A1FCE1600E55520 /* FoodItemsTVC.h */,
 				4ADB01E61A1FCE1600E55520 /* FoodItemsTVC.m */,
@@ -291,6 +294,7 @@
 				4A03965F1A2442EC00E146AE /* EmailTVC.m in Sources */,
 				4A0A80451A1C0C7E001C82B6 /* FirstViewController.m in Sources */,
 				4A294DD31A22A8AE00CDBAFB /* FoodItem.m in Sources */,
+				4AD222601A266C48008AEB36 /* notes.m in Sources */,
 				4AAD98F31A1DB834006D7939 /* EmailUIVC.m in Sources */,
 				4AAD98F61A1DBCB4006D7939 /* DocEmailUIVC.m in Sources */,
 				4A0A803F1A1C0C7E001C82B6 /* main.m in Sources */,

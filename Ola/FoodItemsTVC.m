@@ -47,7 +47,7 @@
 
 - (void) updateTitle
 {
-    NSString *newTitle = [NSString stringWithFormat: @"Food Items (%lu g)", self.totalCarbs];
+    NSString *newTitle = [NSString stringWithFormat: @"Food Items (%lug)", self.totalCarbs];
     
     self.title = newTitle;
 }
@@ -233,6 +233,7 @@
         [alert textFieldAtIndex:1].secureTextEntry = NO;
         [alert textFieldAtIndex:0].placeholder = @"Item Name";
         [alert textFieldAtIndex:1].placeholder = @"Carb Count";
+        [[alert textFieldAtIndex:1] setDelegate:self];
         [alert textFieldAtIndex:1].keyboardType = UIKeyboardTypeNumberPad;
         alert.tag = 1;
         
@@ -432,6 +433,48 @@
     [alert show];
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if([self numFoodItems] == 0)
+    {
+        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"No insulin injection required"
+                                                         message:@"Add at least 1 food item"
+                                                        delegate:nil
+                                               cancelButtonTitle:@"OK"
+                                               otherButtonTitles: nil];
+        
+        [alert show];
+
+        return NO;
+    }
+    
+    if(self.totalCarbs == 0)
+    {
+        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"No insulin injection required"
+                                                         message:@"Add at least 1g of carb"
+                                                        delegate:nil
+                                               cancelButtonTitle:@"OK"
+                                               otherButtonTitles: nil];
+        
+        [alert show];
+        return NO;
+    }
+    
+    if(self.totalCarbs > 800)
+    {
+        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Error"
+                                                         message:@"Cannot exceed maximum carb count of 800g per meal"
+                                                        delegate:nil
+                                               cancelButtonTitle:@"OK"
+                                               otherButtonTitles: nil];
+        
+        [alert show];
+
+        return NO;
+    }
+    
+    return YES;
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"insulinInjection"]) {
@@ -441,6 +484,15 @@
         }
     }
 }
+
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string  {
+    NSUInteger newLength = [textField.text length] + [string length] - range.length;
+    NSCharacterSet *cs = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
+    NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
+    return (([string isEqualToString:filtered])&&(newLength <= 3));
+}
+
 
 
 @end

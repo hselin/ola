@@ -41,7 +41,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Food Items" id="k4G-7K-135">
-                        <barButtonItem key="leftBarButtonItem" title="Done" id="bko-y1-6Jc">
+                        <barButtonItem key="leftBarButtonItem" title="Calculate Insulin" id="bko-y1-6Jc">
                             <connections>
                                 <segue destination="mjb-PN-fWn" kind="push" identifier="insulinInjection" id="FPX-p6-TZn"/>
                             </connections>
@@ -87,7 +87,7 @@
             </objects>
             <point key="canvasLocation" x="-162" y="-2699"/>
         </scene>
-        <!--Insulin InjectionVC-->
+        <!--Insulin Injection-->
         <scene sceneID="hjA-6L-XzJ">
             <objects>
                 <viewController id="mjb-PN-fWn" customClass="InsulinInjectionVC" sceneMemberID="viewController">
@@ -141,16 +141,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                <connections>
-                                    <action selector="insulinAmountValueChange:" destination="mjb-PN-fWn" eventType="editingChanged" id="DTW-BL-KxZ"/>
-                                </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Units" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vT-Yk-GXH">
-                                <rect key="frame" x="280" y="144" width="40" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="std_wave" translatesAutoresizingMaskIntoConstraints="NO" id="QPY-gm-N4q">
                                 <rect key="frame" x="210" y="332" width="181" height="85"/>
                                 <constraints>
@@ -167,28 +158,43 @@
                                     <action selector="startInjection:" destination="mjb-PN-fWn" eventType="touchUpInside" id="WhR-gf-lLA"/>
                                 </connections>
                             </button>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="wWu-dl-IlB">
+                                <rect key="frame" x="253" y="152" width="94" height="29"/>
+                                <connections>
+                                    <action selector="insulinAmountStepperValueChanged:" destination="mjb-PN-fWn" eventType="valueChanged" id="2X5-P3-Gye"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Units" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vT-Yk-GXH">
+                                <rect key="frame" x="390" y="110" width="40" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qAQ-xV-xi4" firstAttribute="top" secondItem="fi7-2N-RsC" secondAttribute="bottom" constant="8" symbolic="YES" id="1Bo-Ul-Uwb"/>
                             <constraint firstAttribute="centerX" secondItem="qAQ-xV-xi4" secondAttribute="centerX" id="Dq6-0A-acf"/>
                             <constraint firstItem="RlR-Y1-9T2" firstAttribute="top" secondItem="Tdd-VF-EGZ" secondAttribute="bottom" constant="18" id="E9a-j9-Qvg"/>
+                            <constraint firstItem="htv-Fp-btj" firstAttribute="centerY" secondItem="7vT-Yk-GXH" secondAttribute="centerY" constant="0.5" id="IxY-0F-9cx"/>
+                            <constraint firstAttribute="centerX" secondItem="wWu-dl-IlB" secondAttribute="centerX" id="JZe-Du-dV3"/>
                             <constraint firstAttribute="centerX" secondItem="Tdd-VF-EGZ" secondAttribute="centerX" id="N2J-im-srM"/>
                             <constraint firstAttribute="centerX" secondItem="FLg-hX-WKF" secondAttribute="centerX" id="TIy-E8-Hhb"/>
                             <constraint firstItem="FLg-hX-WKF" firstAttribute="top" secondItem="QPY-gm-N4q" secondAttribute="bottom" constant="47" id="Vem-S9-1I5"/>
                             <constraint firstAttribute="centerX" secondItem="htv-Fp-btj" secondAttribute="centerX" id="XUx-HK-a2Q"/>
-                            <constraint firstAttribute="centerX" secondItem="7vT-Yk-GXH" secondAttribute="centerX" id="cFs-tc-qaW"/>
                             <constraint firstItem="QPY-gm-N4q" firstAttribute="top" secondItem="RlR-Y1-9T2" secondAttribute="bottom" constant="35" id="iEj-Dt-Mu3"/>
                             <constraint firstItem="htv-Fp-btj" firstAttribute="top" secondItem="qAQ-xV-xi4" secondAttribute="bottom" constant="13" id="kmG-zq-2ii"/>
                             <constraint firstAttribute="centerX" secondItem="QPY-gm-N4q" secondAttribute="centerX" id="mSd-Fd-s1V"/>
+                            <constraint firstItem="7vT-Yk-GXH" firstAttribute="leading" secondItem="htv-Fp-btj" secondAttribute="trailing" constant="8" id="n4S-Py-BEh"/>
+                            <constraint firstItem="wWu-dl-IlB" firstAttribute="top" secondItem="htv-Fp-btj" secondAttribute="bottom" constant="16" id="ng0-H2-pBh"/>
                             <constraint firstItem="8ek-po-atV" firstAttribute="top" secondItem="FLg-hX-WKF" secondAttribute="bottom" constant="57" id="qUR-10-pSF"/>
-                            <constraint firstItem="7vT-Yk-GXH" firstAttribute="top" secondItem="htv-Fp-btj" secondAttribute="bottom" constant="8" symbolic="YES" id="tQN-0b-s7s"/>
                             <constraint firstAttribute="centerX" secondItem="RlR-Y1-9T2" secondAttribute="centerX" id="yCJ-aE-bxk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zOq-6d-XPd"/>
+                    <navigationItem key="navigationItem" title="Insulin Injection" id="zOq-6d-XPd"/>
                     <connections>
                         <outlet property="insulinAmountInput" destination="htv-Fp-btj" id="I4a-QT-hE1"/>
+                        <outlet property="insulinAmountStepper" destination="wWu-dl-IlB" id="fKi-LM-IBp"/>
                         <outlet property="waveFormGraphImageView" destination="QPY-gm-N4q" id="UNm-7M-eVZ"/>
                         <outlet property="waveFormSelector" destination="RlR-Y1-9T2" id="ilU-ut-ysN"/>
                     </connections>

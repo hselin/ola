@@ -12,27 +12,14 @@
 @interface InsulinInjectionVC ()
 @property (weak, nonatomic) IBOutlet UITextField *insulinAmountInput;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *waveFormSelector;
+@property (weak, nonatomic) IBOutlet UIStepper *insulinAmountStepper;
 
 @property (weak, nonatomic) IBOutlet UIImageView *waveFormGraphImageView;
 @end
 
 @implementation InsulinInjectionVC
 
-//@synthesize carbCount = _carbCount; // because we provide setter AND getter
-//@synthesize insulinCount = _insulinCount; // because we provide setter AND getter
 
-/*
-- (NSUInteger)insulinCount
-{
-    _insulinCount = (self.carbCount / 8) + 1;
-    return _insulinCount;
-}
-
-- (void)setInsulinCount:(NSUInteger)val
-{
-    _insulinCount = val;
-}
-*/
 
 
 - (void)viewDidLoad {
@@ -46,6 +33,20 @@
     //self.insulinAmountInput.keyboardType = UIKeyboardTypeNumberPad;
     [self.insulinAmountInput setText:[NSString stringWithFormat: @"%lu", self.insulinCount]];
     [self.insulinAmountInput setDelegate:self];
+    
+    self.insulinAmountInput.enabled = NO;
+    
+    if(self.recommendedInsulinCount <= 11)
+        self.minInsulinCount = 1;
+    else
+        self.minInsulinCount = self.recommendedInsulinCount - 10;
+
+    self.maxInsulinCount = MIN(100, self.recommendedInsulinCount + 20);
+    
+    self.insulinAmountStepper.minimumValue = self.minInsulinCount;
+    self.insulinAmountStepper.maximumValue = self.maxInsulinCount;
+    
+    [self.insulinAmountStepper setValue:self.recommendedInsulinCount];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -90,45 +91,6 @@
     }
 }
 
-
-- (IBAction)insulinAmountValueChange:(UITextField *)sender {
-    self.insulinCount = [sender.text intValue];
-    
-    
-    if(self.insulinCount > (self.recommendedInsulinCount + 20))
-    {
-        
-        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Warning"
-                                                         message:@"Cannot exceed recommended dosage by more than 20 units"
-                                                        delegate:self
-                                               cancelButtonTitle:@"OK"
-                                               otherButtonTitles: nil];
-        
-        alert.tag = 3;
-        [alert show];
-        
-        return;
-    }
-
-    
-    
-    if(self.insulinCount > 100)
-    {
-        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Error"
-                                                         message:@"Cannot exceed maximum dosage of 100 units"
-                                                        delegate:self
-                                               cancelButtonTitle:@"OK"
-                                               otherButtonTitles: nil];
-        
-        alert.tag = 2;
-        [alert show];
-        return;
-    }
-    
-    
-}
-
-
 - (IBAction)startInjection:(UIButton *)sender {
     
     NSString *msg = [NSString stringWithFormat: @"%lu units using %@", self.insulinCount, self.waveFormSelectionName];
@@ -167,6 +129,7 @@
     }
     
 }
+
 - (void)handleInsulinDeliveryConfirmationAlertView:(UIAlertView *)alertView withButtonIndex:(NSInteger)buttonIndex
 {
     FoodItemsTVC *fitvc = (FoodItemsTVC *)[self.navigationController.viewControllers objectAtIndex:0];
@@ -174,33 +137,18 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
-- (void)handleExceedMaxInsulinDosageAlertView:(UIAlertView *)alertView withButtonIndex:(NSInteger)buttonIndex
-{
-    self.insulinCount = 100;
-    [self.insulinAmountInput setText:@"100"];
-}
-
-- (void)handleExceedRecommendedInsulinDosageAlertView:(UIAlertView *)alertView withButtonIndex:(NSInteger)buttonIndex
-{
-    self.insulinCount = self.recommendedInsulinCount + 20;
-    [self.insulinAmountInput setText:[NSString stringWithFormat: @"%lu", self.insulinCount]];
-}
-
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    NSLog(@"Button Index =%ld",buttonIndex);
-    
     if(alertView.tag == 0)
         [self handleStartInsulinDeliveryConfirmationAlertView:alertView withButtonIndex:buttonIndex];
     
     if(alertView.tag == 1)
         [self handleInsulinDeliveryConfirmationAlertView:alertView withButtonIndex:buttonIndex];
-    
-    if(alertView.tag == 2)
-        [self handleExceedMaxInsulinDosageAlertView:alertView withButtonIndex:buttonIndex];
-    
-    if(alertView.tag == 3)
-        [self handleExceedRecommendedInsulinDosageAlertView:alertView withButtonIndex:buttonIndex];
+}
+
+- (IBAction)insulinAmountStepperValueChanged:(UIStepper *)sender {
+    self.insulinCount = sender.value;
+    [self.insulinAmountInput setText:[NSString stringWithFormat: @"%lu", self.insulinCount]];
 }
 
 @end
