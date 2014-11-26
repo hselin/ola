@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InsulinInjectionVC : UIViewController <UIAlertViewDelegate, UINavigationControllerDelegate>
+@interface InsulinInjectionVC : UIViewController <UIAlertViewDelegate, UINavigationControllerDelegate,
+UITextFieldDelegate>
 
 @property (nonatomic) NSUInteger carbCount;
 @property (nonatomic) NSUInteger insulinCount;
+@property (nonatomic) NSUInteger recommendedInsulinCount;
 @property (nonatomic) NSString *waveFormSelectionName;
 @end

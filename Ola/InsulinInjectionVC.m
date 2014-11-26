@@ -18,10 +18,10 @@
 
 @implementation InsulinInjectionVC
 
-@synthesize carbCount = _carbCount; // because we provide setter AND getter
-@synthesize insulinCount = _insulinCount; // because we provide setter AND getter
+//@synthesize carbCount = _carbCount; // because we provide setter AND getter
+//@synthesize insulinCount = _insulinCount; // because we provide setter AND getter
 
-
+/*
 - (NSUInteger)insulinCount
 {
     _insulinCount = (self.carbCount / 8) + 1;
@@ -32,20 +32,33 @@
 {
     _insulinCount = val;
 }
+*/
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.recommendedInsulinCount =(self.carbCount / 8) + 1;
+    self.insulinCount = self.recommendedInsulinCount;
+    
     self.waveFormSelectionName = @"Standard Wave";
-    self.insulinAmountInput.keyboardType = UIKeyboardTypeNumberPad;
+    //self.insulinAmountInput.keyboardType = UIKeyboardTypeNumberPad;
     [self.insulinAmountInput setText:[NSString stringWithFormat: @"%lu", self.insulinCount]];
+    [self.insulinAmountInput setDelegate:self];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string  {
+
+    NSUInteger newLength = [textField.text length] + [string length] - range.length;
+    NSCharacterSet *cs = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];//[[NSCharacterSet characterSetWithCharactersInString:NUMBERS_ONLY] invertedSet];
+    NSString *filtered = [[string componentsSeparatedByCharactersInSet:cs] componentsJoinedByString:@""];
+    return (([string isEqualToString:filtered])&&(newLength <= 3));
 }
 
 /*
@@ -77,12 +90,52 @@
     }
 }
 
+
+- (IBAction)insulinAmountValueChange:(UITextField *)sender {
+    self.insulinCount = [sender.text intValue];
+    
+    
+    if(self.insulinCount > (self.recommendedInsulinCount + 20))
+    {
+        
+        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Warning"
+                                                         message:@"Cannot exceed recommended dosage by more than 20 units"
+                                                        delegate:self
+                                               cancelButtonTitle:@"OK"
+                                               otherButtonTitles: nil];
+        
+        alert.tag = 3;
+        [alert show];
+        
+        return;
+    }
+
+    
+    
+    if(self.insulinCount > 100)
+    {
+        UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Error"
+                                                         message:@"Cannot exceed maximum dosage of 100 units"
+                                                        delegate:self
+                                               cancelButtonTitle:@"OK"
+                                               otherButtonTitles: nil];
+        
+        alert.tag = 2;
+        [alert show];
+        return;
+    }
+    
+    
+}
+
+
 - (IBAction)startInjection:(UIButton *)sender {
     
     NSString *msg = [NSString stringWithFormat: @"%lu units using %@", self.insulinCount, self.waveFormSelectionName];
     
     UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Start Insulin Injection"
-                                                     message:msg                                                    delegate:self
+                                                     message:msg
+                                                    delegate:self
                                            cancelButtonTitle:@"Cancel"
                                            otherButtonTitles: nil];
     
@@ -104,7 +157,8 @@
     {
         NSString *msg = [NSString stringWithFormat: @"%lu units using %@", self.insulinCount, self.waveFormSelectionName];
         UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Insulin Delivery Success"
-                                                         message:msg                                                    delegate:self
+                                                         message:msg
+                                                        delegate:self
                                                cancelButtonTitle:@"OK"
                                                otherButtonTitles: nil];
         
@@ -120,6 +174,18 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
+- (void)handleExceedMaxInsulinDosageAlertView:(UIAlertView *)alertView withButtonIndex:(NSInteger)buttonIndex
+{
+    self.insulinCount = 100;
+    [self.insulinAmountInput setText:@"100"];
+}
+
+- (void)handleExceedRecommendedInsulinDosageAlertView:(UIAlertView *)alertView withButtonIndex:(NSInteger)buttonIndex
+{
+    self.insulinCount = self.recommendedInsulinCount + 20;
+    [self.insulinAmountInput setText:[NSString stringWithFormat: @"%lu", self.insulinCount]];
+}
+
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     NSLog(@"Button Index =%ld",buttonIndex);
@@ -129,6 +195,12 @@
     
     if(alertView.tag == 1)
         [self handleInsulinDeliveryConfirmationAlertView:alertView withButtonIndex:buttonIndex];
+    
+    if(alertView.tag == 2)
+        [self handleExceedMaxInsulinDosageAlertView:alertView withButtonIndex:buttonIndex];
+    
+    if(alertView.tag == 3)
+        [self handleExceedRecommendedInsulinDosageAlertView:alertView withButtonIndex:buttonIndex];
 }
 
 @end

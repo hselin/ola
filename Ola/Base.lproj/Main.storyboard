@@ -140,7 +140,10 @@
                                     <constraint firstAttribute="width" constant="163" id="qTV-Eh-PDV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="insulinAmountValueChange:" destination="mjb-PN-fWn" eventType="editingChanged" id="DTW-BL-KxZ"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Units" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vT-Yk-GXH">
                                 <rect key="frame" x="280" y="144" width="40" height="21"/>
