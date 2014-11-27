@@ -567,7 +567,7 @@ to 8 g/unit during Monday mornings.</string>
         <!--Home-->
         <scene sceneID="l25-6n-iaZ">
             <objects>
-                <viewController id="CcJ-mn-BRm" sceneMemberID="viewController">
+                <viewController id="CcJ-mn-BRm" customClass="HomeScreenVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gAY-Yb-5JK"/>
                         <viewControllerLayoutGuide type="bottom" id="u8K-Hg-RQh"/>
@@ -576,32 +576,44 @@ to 8 g/unit during Monday mornings.</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blood Sugar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nh0-2g-L5K">
-                                <rect key="frame" x="237" y="117" width="96" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glucose_breakdown" translatesAutoresizingMaskIntoConstraints="NO" id="H0T-Wz-RmI">
+                                <rect key="frame" x="150" y="210" width="300" height="180"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="8r1-hD-NCg"/>
+                                    <constraint firstAttribute="width" constant="300" id="UM7-AJ-lsZ"/>
                                 </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Glucose History (past 7 days)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqo-ix-eH1">
+                                <rect key="frame" x="188" y="127" width="225" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="piechart" translatesAutoresizingMaskIntoConstraints="NO" id="H0T-Wz-RmI">
-                                <rect key="frame" x="188" y="195" width="225" height="152"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="225" id="tpV-Qb-Vbb"/>
-                                </constraints>
-                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UjW-oq-0hV">
+                                <rect key="frame" x="218" y="174" width="165" height="29"/>
+                                <segments>
+                                    <segment title="Breakdown"/>
+                                    <segment title="Details"/>
+                                </segments>
+                                <connections>
+                                    <action selector="chartTypeSelector:" destination="CcJ-mn-BRm" eventType="valueChanged" id="CVw-4n-4oA"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="u8K-Hg-RQh" firstAttribute="top" secondItem="H0T-Wz-RmI" secondAttribute="bottom" constant="204" id="5Fj-wI-bsx"/>
-                            <constraint firstItem="H0T-Wz-RmI" firstAttribute="centerX" secondItem="ozu-KF-WVX" secondAttribute="centerX" id="B5H-J2-FI1"/>
-                            <constraint firstItem="H0T-Wz-RmI" firstAttribute="top" secondItem="nh0-2g-L5K" secondAttribute="bottom" constant="57" id="JFl-pX-y9V"/>
-                            <constraint firstItem="nh0-2g-L5K" firstAttribute="leading" secondItem="ozu-KF-WVX" secondAttribute="leading" constant="237" id="Wtr-uF-OwL"/>
-                            <constraint firstItem="nh0-2g-L5K" firstAttribute="top" secondItem="gAY-Yb-5JK" secondAttribute="bottom" constant="97" id="fjD-yQ-U3Y"/>
+                            <constraint firstItem="H0T-Wz-RmI" firstAttribute="top" secondItem="UjW-oq-0hV" secondAttribute="bottom" constant="8" symbolic="YES" id="2FD-F5-hYy"/>
+                            <constraint firstAttribute="centerX" secondItem="UjW-oq-0hV" secondAttribute="centerX" id="8tb-R0-ebb"/>
+                            <constraint firstItem="H0T-Wz-RmI" firstAttribute="centerY" secondItem="ozu-KF-WVX" secondAttribute="centerY" id="FMp-V2-L9D"/>
+                            <constraint firstItem="u8K-Hg-RQh" firstAttribute="top" secondItem="H0T-Wz-RmI" secondAttribute="bottom" constant="161" id="FQE-uY-1L2"/>
+                            <constraint firstItem="UjW-oq-0hV" firstAttribute="top" secondItem="mqo-ix-eH1" secondAttribute="bottom" constant="26" id="gmm-xi-A8w"/>
+                            <constraint firstAttribute="centerX" secondItem="H0T-Wz-RmI" secondAttribute="centerX" id="hac-U9-lNF"/>
+                            <constraint firstAttribute="centerX" secondItem="mqo-ix-eH1" secondAttribute="centerX" id="k7t-No-UK3"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="8Ok-el-FJc"/>
+                    <connections>
+                        <outlet property="chartImageView" destination="H0T-Wz-RmI" id="Q5z-Zn-LVV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="092-Ot-Pri" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -760,9 +772,9 @@ Keep up the good work!
         </scene>
     </scenes>
     <resources>
+        <image name="glucose_breakdown" width="481" height="289"/>
         <image name="moo" width="12" height="12"/>
         <image name="new_bolus_graph" width="188" height="91"/>
-        <image name="piechart" width="159" height="126"/>
         <image name="std_wave" width="120" height="70"/>
     </resources>
     <inferredMetricsTieBreakers>
