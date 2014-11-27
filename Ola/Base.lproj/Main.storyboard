@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -600,6 +601,7 @@ to 8 g/unit during Monday mornings.</string>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="H0T-Wz-RmI" firstAttribute="top" secondItem="UjW-oq-0hV" secondAttribute="bottom" constant="8" symbolic="YES" id="2FD-F5-hYy"/>
                             <constraint firstAttribute="centerX" secondItem="UjW-oq-0hV" secondAttribute="centerX" id="8tb-R0-ebb"/>
@@ -609,6 +611,9 @@ to 8 g/unit during Monday mornings.</string>
                             <constraint firstAttribute="centerX" secondItem="H0T-Wz-RmI" secondAttribute="centerX" id="hac-U9-lNF"/>
                             <constraint firstAttribute="centerX" secondItem="mqo-ix-eH1" secondAttribute="centerX" id="k7t-No-UK3"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="J3y-Oj-mcH" appends="YES" id="EcA-SX-xhN"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="8Ok-el-FJc"/>
                     <connections>
@@ -616,8 +621,91 @@ to 8 g/unit during Monday mornings.</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="092-Ot-Pri" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" numberOfTouchesRequired="2" id="J3y-Oj-mcH">
+                    <connections>
+                        <action selector="triggerLockScreen:" destination="CcJ-mn-BRm" id="f2N-2m-fit"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-2382" y="464"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Jl2-SY-ITz">
+            <objects>
+                <viewController storyboardIdentifier="EmergencyInstruction" id="jge-qH-d0i" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VRc-pe-LL2"/>
+                        <viewControllerLayoutGuide type="bottom" id="c4M-pg-bRe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NiD-Ur-CZJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="EMERGENCY ：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqQ-ju-DXk">
+                                <rect key="frame" x="215" y="37" width="171" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSx-Yg-AcN">
+                                <rect key="frame" x="266" y="396" width="68" height="30"/>
+                                <state key="normal" title="CALL 911">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="THIS PERSON HAS TYPE ONE DIABETICS. AND HAS LOST CONSCIOUSNESS DUE TO SEVERE LOW BLOOD SUGAR." translatesAutoresizingMaskIntoConstraints="NO" id="z0t-Eh-iPX">
+                                <rect key="frame" x="86" y="132" width="428" height="93"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="93" id="y0E-9n-qHU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="PLEASE RESPOND" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tfc-go-gvm">
+                                <rect key="frame" x="182" y="66" width="237" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9e-82-7Hj">
+                                <rect key="frame" x="194" y="455" width="212" height="30"/>
+                                <state key="normal" title="CALL EMERGENCY CONTACT">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="PARAMEDICS ARE ON THE WAY(ETA 6MIN). PLEASE CALL FOR FURTHER INSTRUCTION:" translatesAutoresizingMaskIntoConstraints="NO" id="RTZ-ms-NGe">
+                                <rect key="frame" x="86" y="249" width="428" height="117"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="117" id="Nh4-fL-Sg7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="L9e-82-7Hj" firstAttribute="top" secondItem="zSx-Yg-AcN" secondAttribute="bottom" constant="29" id="0Bn-XU-rmi"/>
+                            <constraint firstItem="z0t-Eh-iPX" firstAttribute="centerX" secondItem="zSx-Yg-AcN" secondAttribute="centerX" id="C9n-LH-P3N"/>
+                            <constraint firstItem="z0t-Eh-iPX" firstAttribute="top" secondItem="NiD-Ur-CZJ" secondAttribute="top" constant="132" id="D8p-7o-zQ1"/>
+                            <constraint firstItem="z0t-Eh-iPX" firstAttribute="centerX" secondItem="Tfc-go-gvm" secondAttribute="centerX" id="Iyi-JR-zh4"/>
+                            <constraint firstItem="z0t-Eh-iPX" firstAttribute="leading" secondItem="NiD-Ur-CZJ" secondAttribute="leadingMargin" constant="70" id="QHB-62-pWc"/>
+                            <constraint firstItem="RTZ-ms-NGe" firstAttribute="leading" secondItem="z0t-Eh-iPX" secondAttribute="leading" id="QPv-xY-4YG"/>
+                            <constraint firstItem="zSx-Yg-AcN" firstAttribute="top" secondItem="RTZ-ms-NGe" secondAttribute="bottom" constant="30" id="RSv-Q9-aby"/>
+                            <constraint firstItem="zSx-Yg-AcN" firstAttribute="centerX" secondItem="L9e-82-7Hj" secondAttribute="centerX" id="UDT-mf-DDw"/>
+                            <constraint firstItem="RTZ-ms-NGe" firstAttribute="trailing" secondItem="z0t-Eh-iPX" secondAttribute="trailing" id="YO3-tt-Ttn"/>
+                            <constraint firstItem="RTZ-ms-NGe" firstAttribute="top" secondItem="z0t-Eh-iPX" secondAttribute="bottom" constant="24" id="an0-6A-nC7"/>
+                            <constraint firstItem="z0t-Eh-iPX" firstAttribute="top" secondItem="Tfc-go-gvm" secondAttribute="bottom" constant="44" id="fma-N3-mOJ"/>
+                            <constraint firstItem="z0t-Eh-iPX" firstAttribute="centerX" secondItem="qqQ-ju-DXk" secondAttribute="centerX" id="j9i-kX-5to"/>
+                            <constraint firstItem="qqQ-ju-DXk" firstAttribute="top" secondItem="VRc-pe-LL2" secondAttribute="bottom" constant="17" id="lNw-5d-3Fw"/>
+                            <constraint firstItem="z0t-Eh-iPX" firstAttribute="centerX" secondItem="NiD-Ur-CZJ" secondAttribute="centerX" id="qQ2-jS-u67"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fiw-UU-vbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2391" y="1245"/>
         </scene>
         <!--Item-->
         <scene sceneID="GW8-Ha-ipg">
@@ -631,10 +719,15 @@ to 8 g/unit during Monday mornings.</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Zby-FJ-9HD" appends="YES" id="byb-ue-xqD"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Ca1-uC-EpJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nms-vn-V5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" numberOfTouchesRequired="2" id="Zby-FJ-9HD"/>
             </objects>
             <point key="canvasLocation" x="-2382" y="-3189"/>
         </scene>
