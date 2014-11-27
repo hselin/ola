@@ -7,9 +7,11 @@
 //
 
 #import "DoctorCommTVC.h"
+#import "EmailUIVC.h"
 
 @interface DoctorCommTVC ()
 @property (strong, nonatomic) IBOutletCollection(UITableViewCell) NSArray *staticCells;
+@property (weak, nonatomic) IBOutlet UIImageView *unreadimage;
 
 @end
 
@@ -191,6 +193,19 @@
     [self reloadDataAnimated:YES];
     
     //[searchBar resignFirstResponder]; // if you want the keyboard to go away
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"newEmail"]) {
+        if ([segue.destinationViewController isKindOfClass:[EmailUIVC class]]) {
+            EmailUIVC *euivc = (EmailUIVC *)segue.destinationViewController;
+            euivc.subject = @"New Message";
+        }
+    }
+    if ([segue.identifier isEqualToString:@"new bolus ratio"]) {
+        self.unreadimage.image = nil;
+    }
+    
 }
 
 @end
