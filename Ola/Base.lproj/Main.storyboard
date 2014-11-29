@@ -565,7 +565,7 @@ to 8 g/unit during Monday mornings.</string>
             </objects>
             <point key="canvasLocation" x="957" y="-1234"/>
         </scene>
-        <!--Home ScreenVC-->
+        <!--Home-->
         <scene sceneID="l25-6n-iaZ">
             <objects>
                 <viewController id="CcJ-mn-BRm" customClass="HomeScreenVC" sceneMemberID="viewController">
@@ -615,7 +615,7 @@ to 8 g/unit during Monday mornings.</string>
                             <outletCollection property="gestureRecognizers" destination="J3y-Oj-mcH" appends="YES" id="EcA-SX-xhN"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="8Ok-el-FJc"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home_icon" id="8Ok-el-FJc"/>
                     <connections>
                         <outlet property="chartImageView" destination="H0T-Wz-RmI" id="Q5z-Zn-LVV"/>
                     </connections>
@@ -707,7 +707,7 @@ to 8 g/unit during Monday mornings.</string>
             </objects>
             <point key="canvasLocation" x="-2391" y="1245"/>
         </scene>
-        <!--View Controller-->
+        <!--Glucose-->
         <scene sceneID="GW8-Ha-ipg">
             <objects>
                 <viewController id="dPo-Z0-4hs" sceneMemberID="viewController">
@@ -724,14 +724,14 @@ to 8 g/unit during Monday mornings.</string>
                             <outletCollection property="gestureRecognizers" destination="Zby-FJ-9HD" appends="YES" id="byb-ue-xqD"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="Ca1-uC-EpJ"/>
+                    <tabBarItem key="tabBarItem" title="Glucose" image="blood_icon" id="Ca1-uC-EpJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nms-vn-V5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer numberOfTapsRequired="2" numberOfTouchesRequired="2" id="Zby-FJ-9HD"/>
             </objects>
             <point key="canvasLocation" x="-2382" y="-3189"/>
         </scene>
-        <!--View Controller-->
+        <!--Insulin-->
         <scene sceneID="Kjg-Ax-whS">
             <objects>
                 <viewController id="vSI-3V-VNA" sceneMemberID="viewController">
@@ -744,17 +744,17 @@ to 8 g/unit during Monday mornings.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="mostRecent" id="rE9-2m-WIc"/>
+                    <tabBarItem key="tabBarItem" title="Insulin" image="insulin_icon" id="rE9-2m-WIc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lxi-NM-fMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2382" y="-2390"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Doctor Comm-->
         <scene sceneID="Ozd-AP-DC8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jZP-1p-Ebm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="tZC-ZX-L8A"/>
+                    <tabBarItem key="tabBarItem" title="Doctor Comm" image="doc_comm_icon" id="tZC-ZX-L8A"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0j1-38-7cp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -844,11 +844,11 @@ Keep up the good work!
             </objects>
             <point key="canvasLocation" x="-347" y="-770"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Food-->
         <scene sceneID="hgc-w3-7ZI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8H1-Gf-f88" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="downloads" id="QeT-0a-8xe"/>
+                    <tabBarItem key="tabBarItem" title="Food" image="food_icon" id="QeT-0a-8xe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tx9-fr-EcQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -865,7 +865,12 @@ Keep up the good work!
         </scene>
     </scenes>
     <resources>
+        <image name="blood_icon" width="25" height="25"/>
+        <image name="doc_comm_icon" width="25" height="25"/>
+        <image name="food_icon" width="25" height="25"/>
         <image name="glucose_breakdown" width="481" height="289"/>
+        <image name="home_icon" width="25" height="25"/>
+        <image name="insulin_icon" width="25" height="25"/>
         <image name="moo" width="12" height="12"/>
         <image name="new_bolus_graph" width="188" height="91"/>
         <image name="std_wave" width="120" height="70"/>

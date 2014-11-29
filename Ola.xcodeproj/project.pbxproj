@@ -429,13 +429,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iOS Development: Albert Chen (5NNP64ZMSX)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iOS Development: Albert Chen (5NNP64ZMSX)";
 				INFOPLIST_FILE = Ola/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "e62b79f4-15bc-4d27-a148-25b03a37e10a";
 			};
 			name = Debug;
 		};
@@ -444,13 +444,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iOS Development: Albert Chen (5NNP64ZMSX)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iOS Development: Albert Chen (5NNP64ZMSX)";
 				INFOPLIST_FILE = Ola/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "e62b79f4-15bc-4d27-a148-25b03a37e10a";
 			};
 			name = Release;
 		};
