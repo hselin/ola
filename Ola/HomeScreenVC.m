@@ -21,6 +21,23 @@
     
     //self.graphImageView.contentMode = UIViewContentModeScaleAspectFit;
 }
+- (IBAction)triggerLockScreen:(id)sender {
+    UILocalNotification* n1 = [[UILocalNotification alloc] init];
+    n1.fireDate = [NSDate dateWithTimeIntervalSinceNow: 10];
+    n1.alertBody = @"EMERGENCY DETECTED - SWIPE FOR INFO";
+    
+    UILocalNotification* n2 = [[UILocalNotification alloc] init];
+    n2.fireDate = [NSDate dateWithTimeIntervalSinceNow: 20];
+    n2.alertBody = @"ADMINSTERING GLUBAGON DOSAGE - SWIPE FOR INFO";
+    
+    UILocalNotification* n3 = [[UILocalNotification alloc] init];
+    n3.fireDate = [NSDate dateWithTimeIntervalSinceNow: 30];
+    n3.alertBody = @"PARAMEDICS ON THE WAY(ETA 7MIN) - SWIPE FOR INFO";
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification: n1];
+    [[UIApplication sharedApplication] scheduleLocalNotification: n2];
+    [[UIApplication sharedApplication] scheduleLocalNotification: n3];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
