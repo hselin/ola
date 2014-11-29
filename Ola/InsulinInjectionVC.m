@@ -31,7 +31,7 @@
     
     self.waveFormSelectionName = @"Standard Wave";
     //self.insulinAmountInput.keyboardType = UIKeyboardTypeNumberPad;
-    [self.insulinAmountInput setText:[NSString stringWithFormat: @"%lu", self.insulinCount]];
+    [self.insulinAmountInput setText:[NSString stringWithFormat: @"%lu", (unsigned long)self.insulinCount]];
     [self.insulinAmountInput setDelegate:self];
     
     self.insulinAmountInput.enabled = NO;
@@ -117,7 +117,7 @@
     
     if (buttonIndex == 1)
     {
-        NSString *msg = [NSString stringWithFormat: @"%lu units using %@", self.insulinCount, self.waveFormSelectionName];
+        NSString *msg = [NSString stringWithFormat: @"%lu units using %@", (unsigned long)self.insulinCount, self.waveFormSelectionName];
         UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Insulin Delivery Success"
                                                          message:msg
                                                         delegate:self
@@ -134,7 +134,11 @@
 {
     FoodItemsTVC *fitvc = (FoodItemsTVC *)[self.navigationController.viewControllers objectAtIndex:0];
     [fitvc removeAllFoodItems];
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popToRootViewControllerAnimated:NO];
+    //UITabBarController* tabBarController = (UITabBarController*)fitvc.parentViewController;
+    
+    UITabBarController* tabBarController = fitvc.tabBarController;
+    [tabBarController setSelectedIndex:2];
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
@@ -148,7 +152,7 @@
 
 - (IBAction)insulinAmountStepperValueChanged:(UIStepper *)sender {
     self.insulinCount = sender.value;
-    [self.insulinAmountInput setText:[NSString stringWithFormat: @"%lu", self.insulinCount]];
+    [self.insulinAmountInput setText:[NSString stringWithFormat: @"%lu", (unsigned long)self.insulinCount]];
 }
 
 @end

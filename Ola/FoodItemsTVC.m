@@ -477,7 +477,7 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"insulinInjection"]) {
+    if ([segue.identifier isEqualToString:@"insulin Injection"]) {
         if ([segue.destinationViewController isKindOfClass:[InsulinInjectionVC class]]) {
             InsulinInjectionVC *iivc = (InsulinInjectionVC *)segue.destinationViewController;
             iivc.carbCount = self.totalCarbs;
