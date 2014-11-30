@@ -93,7 +93,7 @@
 
 - (IBAction)startInjection:(UIButton *)sender {
     
-    NSString *msg = [NSString stringWithFormat: @"%lu units using %@", self.insulinCount, self.waveFormSelectionName];
+    NSString *msg = [NSString stringWithFormat: @"%lu units using %@", (unsigned long)self.insulinCount, self.waveFormSelectionName];
     
     UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Start Insulin Injection"
                                                      message:msg

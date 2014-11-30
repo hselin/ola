@@ -110,19 +110,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery Rate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdd-VF-EGZ">
-                                <rect key="frame" x="249" y="230" width="102" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="JUy-z4-khD"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RlR-Y1-9T2">
-                                <rect key="frame" x="130" y="269" width="341" height="29"/>
+                                <rect key="frame" x="175" y="268" width="251" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="341" id="24p-tf-tJj"/>
+                                    <constraint firstAttribute="width" constant="251" id="5Ne-23-M8I"/>
                                     <constraint firstAttribute="height" constant="28" id="lKg-hD-rE6"/>
                                 </constraints>
                                 <segments>
@@ -171,20 +162,26 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery Rate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdd-VF-EGZ">
+                                <rect key="frame" x="249" y="239" width="102" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qAQ-xV-xi4" firstAttribute="top" secondItem="fi7-2N-RsC" secondAttribute="bottom" constant="8" symbolic="YES" id="1Bo-Ul-Uwb"/>
                             <constraint firstAttribute="centerX" secondItem="qAQ-xV-xi4" secondAttribute="centerX" id="Dq6-0A-acf"/>
-                            <constraint firstItem="RlR-Y1-9T2" firstAttribute="top" secondItem="Tdd-VF-EGZ" secondAttribute="bottom" constant="18" id="E9a-j9-Qvg"/>
                             <constraint firstItem="htv-Fp-btj" firstAttribute="centerY" secondItem="7vT-Yk-GXH" secondAttribute="centerY" constant="0.5" id="IxY-0F-9cx"/>
                             <constraint firstAttribute="centerX" secondItem="wWu-dl-IlB" secondAttribute="centerX" id="JZe-Du-dV3"/>
-                            <constraint firstAttribute="centerX" secondItem="Tdd-VF-EGZ" secondAttribute="centerX" id="N2J-im-srM"/>
                             <constraint firstAttribute="centerX" secondItem="FLg-hX-WKF" secondAttribute="centerX" id="TIy-E8-Hhb"/>
+                            <constraint firstItem="RlR-Y1-9T2" firstAttribute="top" secondItem="Tdd-VF-EGZ" secondAttribute="bottom" constant="8" symbolic="YES" id="V46-iN-0Kk"/>
                             <constraint firstItem="FLg-hX-WKF" firstAttribute="top" secondItem="QPY-gm-N4q" secondAttribute="bottom" constant="47" id="Vem-S9-1I5"/>
                             <constraint firstAttribute="centerX" secondItem="htv-Fp-btj" secondAttribute="centerX" id="XUx-HK-a2Q"/>
-                            <constraint firstItem="QPY-gm-N4q" firstAttribute="top" secondItem="RlR-Y1-9T2" secondAttribute="bottom" constant="35" id="iEj-Dt-Mu3"/>
+                            <constraint firstItem="QPY-gm-N4q" firstAttribute="top" secondItem="RlR-Y1-9T2" secondAttribute="bottom" constant="36" id="jf8-QO-EdC"/>
                             <constraint firstItem="htv-Fp-btj" firstAttribute="top" secondItem="qAQ-xV-xi4" secondAttribute="bottom" constant="13" id="kmG-zq-2ii"/>
+                            <constraint firstItem="Tdd-VF-EGZ" firstAttribute="centerX" secondItem="RlR-Y1-9T2" secondAttribute="centerX" id="lnX-9p-rpu"/>
                             <constraint firstAttribute="centerX" secondItem="QPY-gm-N4q" secondAttribute="centerX" id="mSd-Fd-s1V"/>
                             <constraint firstItem="7vT-Yk-GXH" firstAttribute="leading" secondItem="htv-Fp-btj" secondAttribute="trailing" constant="8" id="n4S-Py-BEh"/>
                             <constraint firstItem="wWu-dl-IlB" firstAttribute="top" secondItem="htv-Fp-btj" secondAttribute="bottom" constant="16" id="ng0-H2-pBh"/>

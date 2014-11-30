@@ -47,7 +47,7 @@
 
 - (void) updateTitle
 {
-    NSString *newTitle = [NSString stringWithFormat: @"Food Items (%lug)", self.totalCarbs];
+    NSString *newTitle = [NSString stringWithFormat: @"Food Items (%lug)", (unsigned long)self.totalCarbs];
     
     self.title = newTitle;
 }
@@ -306,8 +306,6 @@
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    NSLog(@"Button Index =%ld",buttonIndex);
-    
     if(alertView.tag == 0)
         [self handleFoodItemInputTypeAlertView:alertView withButtonIndex:buttonIndex];
 
@@ -330,7 +328,7 @@
         FoodItem *fi = [self foodItemAtIndex:indexPath.row];
     
         cell.textLabel.text = fi.name;
-        cell.detailTextLabel.text = [NSString stringWithFormat: @"%lu g", fi.carbCount];
+        cell.detailTextLabel.text = [NSString stringWithFormat: @"%lu g", (unsigned long)fi.carbCount];
         
         return cell;
     }
@@ -342,7 +340,7 @@
         FoodItem *fi = [self foodNameAtIndex:indexPath.row];
         
         cell.textLabel.text = fi.name;
-        cell.detailTextLabel.text = [NSString stringWithFormat: @"%lu g", fi.carbCount];
+        cell.detailTextLabel.text = [NSString stringWithFormat: @"%lu g", (unsigned long)fi.carbCount];
         
         return cell;
     }
