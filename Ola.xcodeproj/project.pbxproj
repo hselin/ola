@@ -18,6 +18,7 @@
 		4A294DD31A22A8AE00CDBAFB /* FoodItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A294DD21A22A8AE00CDBAFB /* FoodItem.m */; };
 		4A44325F1A1C54DD00D8B70B /* StaticDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A44325E1A1C54DD00D8B70B /* StaticDataTableViewController.m */; };
 		4A59969E1A23F67F0086FD35 /* CustomIOS7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A59969D1A23F67F0086FD35 /* CustomIOS7AlertView.m */; };
+		4A881F951A2A992B0021D691 /* OlaTBC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A881F941A2A992B0021D691 /* OlaTBC.m */; };
 		4A8EEC8F1A2574A200D7325E /* InsulinInjectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8EEC8E1A2574A200D7325E /* InsulinInjectionVC.m */; };
 		4AAD98F31A1DB834006D7939 /* EmailUIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD98F21A1DB834006D7939 /* EmailUIVC.m */; };
 		4AAD98F61A1DBCB4006D7939 /* DocEmailUIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AAD98F51A1DBCB4006D7939 /* DocEmailUIVC.m */; };
@@ -63,6 +64,8 @@
 		4A44325E1A1C54DD00D8B70B /* StaticDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StaticDataTableViewController.m; sourceTree = "<group>"; };
 		4A59969C1A23F67F0086FD35 /* CustomIOS7AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomIOS7AlertView.h; sourceTree = "<group>"; };
 		4A59969D1A23F67F0086FD35 /* CustomIOS7AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomIOS7AlertView.m; sourceTree = "<group>"; };
+		4A881F931A2A992B0021D691 /* OlaTBC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OlaTBC.h; sourceTree = "<group>"; };
+		4A881F941A2A992B0021D691 /* OlaTBC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OlaTBC.m; sourceTree = "<group>"; };
 		4A8EEC8D1A2574A200D7325E /* InsulinInjectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsulinInjectionVC.h; sourceTree = "<group>"; };
 		4A8EEC8E1A2574A200D7325E /* InsulinInjectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsulinInjectionVC.m; sourceTree = "<group>"; };
 		4AAD98F11A1DB834006D7939 /* EmailUIVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailUIVC.h; sourceTree = "<group>"; };
@@ -136,6 +139,8 @@
 				4A8EEC8E1A2574A200D7325E /* InsulinInjectionVC.m */,
 				4AD2225F1A266C48008AEB36 /* notes.m */,
 				4A0A80491A1C0C7E001C82B6 /* Main.storyboard */,
+				4A881F931A2A992B0021D691 /* OlaTBC.h */,
+				4A881F941A2A992B0021D691 /* OlaTBC.m */,
 				4AD222611A26ABA4008AEB36 /* HomeScreenVC.h */,
 				4AD222621A26ABA4008AEB36 /* HomeScreenVC.m */,
 				4ADB01E51A1FCE1600E55520 /* FoodItemsTVC.h */,
@@ -292,6 +297,7 @@
 				4A0A80481A1C0C7E001C82B6 /* SecondViewController.m in Sources */,
 				4AD222631A26ABA4008AEB36 /* HomeScreenVC.m in Sources */,
 				4ABB40D71A1C313400512179 /* DoctorCommTVC.m in Sources */,
+				4A881F951A2A992B0021D691 /* OlaTBC.m in Sources */,
 				4ADB01E71A1FCE1600E55520 /* FoodItemsTVC.m in Sources */,
 				4AFF336D1A1F2A410024704A /* DocEmail3UIVC.m in Sources */,
 				4A0A80421A1C0C7E001C82B6 /* AppDelegate.m in Sources */,
@@ -427,7 +433,7 @@
 		4A0A80601A1C0C7F001C82B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iOS Development: Albert Chen (5NNP64ZMSX)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iOS Development: Albert Chen (5NNP64ZMSX)";
@@ -442,7 +448,7 @@
 		4A0A80611A1C0C7F001C82B6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iOS Development: Albert Chen (5NNP64ZMSX)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iOS Development: Albert Chen (5NNP64ZMSX)";
