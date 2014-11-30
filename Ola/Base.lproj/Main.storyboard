@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jge-qH-d0i">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -627,10 +627,10 @@ to 8 g/unit during Monday mornings.</string>
             </objects>
             <point key="canvasLocation" x="-3206" y="-584"/>
         </scene>
-        <!--View Controller-->
+        <!--EmergencyVC-->
         <scene sceneID="Jl2-SY-ITz">
             <objects>
-                <viewController storyboardIdentifier="EmergencyInstruction" id="jge-qH-d0i" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EmergencyInstruction" id="jge-qH-d0i" customClass="EmergencyVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VRc-pe-LL2"/>
                         <viewControllerLayoutGuide type="bottom" id="c4M-pg-bRe"/>
@@ -650,6 +650,9 @@ to 8 g/unit during Monday mornings.</string>
                                 <state key="normal" title="CALL 911">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="call_911:" destination="jge-qH-d0i" eventType="touchUpInside" id="ptx-hT-8Uo"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="THIS PERSON HAS TYPE ONE DIABETICS. AND HAS LOST CONSCIOUSNESS DUE TO SEVERE LOW BLOOD SUGAR." translatesAutoresizingMaskIntoConstraints="NO" id="z0t-Eh-iPX">
                                 <rect key="frame" x="86" y="132" width="428" height="93"/>
@@ -666,12 +669,6 @@ to 8 g/unit during Monday mornings.</string>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9e-82-7Hj">
-                                <rect key="frame" x="194" y="455" width="212" height="30"/>
-                                <state key="normal" title="CALL EMERGENCY CONTACT">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="PARAMEDICS ARE ON THE WAY(ETA 6MIN). PLEASE CALL FOR FURTHER INSTRUCTION:" translatesAutoresizingMaskIntoConstraints="NO" id="RTZ-ms-NGe">
                                 <rect key="frame" x="86" y="249" width="428" height="117"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -681,6 +678,15 @@ to 8 g/unit during Monday mornings.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9e-82-7Hj">
+                                <rect key="frame" x="194" y="455" width="212" height="30"/>
+                                <state key="normal" title="CALL EMERGENCY CONTACT">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="call_emergency_contact:" destination="jge-qH-d0i" eventType="touchUpInside" id="nqu-An-Xqf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -703,7 +709,7 @@ to 8 g/unit during Monday mornings.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fiw-UU-vbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2391" y="1245"/>
+            <point key="canvasLocation" x="-2327" y="-584"/>
         </scene>
         <!--Glucose-->
         <scene sceneID="GW8-Ha-ipg">
