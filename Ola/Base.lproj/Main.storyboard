@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jge-qH-d0i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -261,15 +261,15 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moo" translatesAutoresizingMaskIntoConstraints="NO" id="035-ZB-7mH">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue_dot" translatesAutoresizingMaskIntoConstraints="NO" id="035-ZB-7mH">
                                                     <rect key="frame" x="2" y="20" width="8" height="8"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="035-ZB-7mH" secondAttribute="bottom" constant="7" id="5jV-2F-9kT"/>
-                                                <constraint firstItem="jo3-1f-sGu" firstAttribute="leading" secondItem="035-ZB-7mH" secondAttribute="trailing" constant="5" id="9Gd-Hs-aEH"/>
-                                                <constraint firstItem="035-ZB-7mH" firstAttribute="leading" secondItem="mwz-lQ-cro" secondAttribute="leadingMargin" constant="-6" id="Egc-Mv-q2c"/>
-                                                <constraint firstItem="035-ZB-7mH" firstAttribute="top" secondItem="mwz-lQ-cro" secondAttribute="topMargin" constant="12" id="WZg-BE-PRX"/>
+                                                <constraint firstItem="jo3-1f-sGu" firstAttribute="leading" secondItem="035-ZB-7mH" secondAttribute="trailing" constant="5" id="Vv4-Ze-UjP"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="035-ZB-7mH" secondAttribute="bottom" constant="7" id="Wcl-eA-xqr"/>
+                                                <constraint firstItem="035-ZB-7mH" firstAttribute="leading" secondItem="mwz-lQ-cro" secondAttribute="leadingMargin" constant="-6" id="aGJ-rR-yWE"/>
+                                                <constraint firstItem="035-ZB-7mH" firstAttribute="top" secondItem="mwz-lQ-cro" secondAttribute="topMargin" constant="12" id="oa3-LW-bHf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -333,7 +333,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Doctor Communication" id="h27-mS-Vwb">
-                        <barButtonItem key="rightBarButtonItem" title="Compose Email" id="9ah-C3-L97">
+                        <barButtonItem key="rightBarButtonItem" title="New Email" id="9ah-C3-L97">
                             <connections>
                                 <segue destination="5yw-Ae-ahN" kind="presentation" identifier="newEmail" id="0IM-UK-Gch"/>
                             </connections>
@@ -377,11 +377,9 @@
                                     <fragment>
                                         <string key="content">Date: October 27, 2015 at 6:00 PM
 
-I've noticed that you experienced several low blood sugar 
-events during Monday mornings for the last few month.
+I've noticed that you experienced several low blood sugar events during Monday mornings for the last few month.
 
-I would like to decrease your bolus ratio from 10 g/unit 
-to 8 g/unit during Monday mornings.</string>
+I would like to decrease your bolus ratio from 10 g/unit to 8 g/unit during Monday mornings.</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
@@ -391,16 +389,14 @@ to 8 g/unit during Monday mornings.</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bolus_graph" translatesAutoresizingMaskIntoConstraints="NO" id="KTP-2M-bty">
-                                <rect key="frame" x="211" y="305" width="178" height="83"/>
+                                <rect key="frame" x="211" y="305" width="178" height="91"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="178" id="RSh-cK-U3R"/>
+                                    <constraint firstAttribute="width" constant="178" id="Gko-CI-2wD"/>
+                                    <constraint firstAttribute="height" constant="91" id="agH-Y2-UuL"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ue-5R-hHb">
-                                <rect key="frame" x="271" y="446" width="58" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="ssn-vt-XzC"/>
-                                </constraints>
+                                <rect key="frame" x="271" y="404" width="58" height="30"/>
                                 <state key="normal" title="Approve">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -411,15 +407,14 @@ to 8 g/unit during Monday mornings.</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Iqz-4d-NsE" firstAttribute="top" secondItem="6Ue-5R-hHb" secondAttribute="bottom" constant="80" id="3DJ-wP-bie"/>
-                            <constraint firstItem="KTP-2M-bty" firstAttribute="top" secondItem="z7c-Uu-Dos" secondAttribute="bottom" constant="241" id="BUQ-oT-sfz"/>
-                            <constraint firstItem="gRh-Tx-pau" firstAttribute="top" secondItem="j8g-DQ-qgW" secondAttribute="top" id="Bn7-gm-zwg"/>
-                            <constraint firstAttribute="centerX" secondItem="6Ue-5R-hHb" secondAttribute="centerX" id="Frv-Q0-TFy"/>
-                            <constraint firstItem="6Ue-5R-hHb" firstAttribute="top" secondItem="KTP-2M-bty" secondAttribute="bottom" constant="58" id="H8c-ep-7j4"/>
-                            <constraint firstItem="6Ue-5R-hHb" firstAttribute="centerX" secondItem="gRh-Tx-pau" secondAttribute="centerX" id="HId-eA-H5Q"/>
-                            <constraint firstItem="gRh-Tx-pau" firstAttribute="leading" secondItem="j8g-DQ-qgW" secondAttribute="leading" id="HlL-aN-bTs"/>
-                            <constraint firstAttribute="centerX" secondItem="KTP-2M-bty" secondAttribute="centerX" id="UQF-6M-lOa"/>
-                            <constraint firstAttribute="bottom" secondItem="gRh-Tx-pau" secondAttribute="bottom" id="rFU-Hy-83y"/>
+                            <constraint firstItem="6Ue-5R-hHb" firstAttribute="top" secondItem="KTP-2M-bty" secondAttribute="bottom" constant="8" symbolic="YES" id="4k0-34-FIs"/>
+                            <constraint firstItem="gRh-Tx-pau" firstAttribute="leading" secondItem="j8g-DQ-qgW" secondAttribute="leading" id="9xf-Lg-g2T"/>
+                            <constraint firstItem="KTP-2M-bty" firstAttribute="centerX" secondItem="gRh-Tx-pau" secondAttribute="centerX" id="DCY-4h-FNx"/>
+                            <constraint firstAttribute="centerX" secondItem="KTP-2M-bty" secondAttribute="centerX" id="EdD-R9-edj"/>
+                            <constraint firstAttribute="centerX" secondItem="6Ue-5R-hHb" secondAttribute="centerX" id="Eep-7w-oAL"/>
+                            <constraint firstItem="gRh-Tx-pau" firstAttribute="top" secondItem="j8g-DQ-qgW" secondAttribute="top" id="TtB-d7-HF6"/>
+                            <constraint firstItem="Iqz-4d-NsE" firstAttribute="top" secondItem="6Ue-5R-hHb" secondAttribute="bottom" constant="122" id="oaT-yV-fH8"/>
+                            <constraint firstAttribute="bottom" secondItem="gRh-Tx-pau" secondAttribute="bottom" id="qKX-bu-qIS"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -810,8 +805,7 @@ to 8 g/unit during Monday mornings.</string>
                                 <string key="content">From: Dr. Holmes
 Date: October 20, 2015 at 2:00 PM
 
-Seems your blood sugar levels are trending low recently.
-Please make sure it does not get too low.
+Seems your blood sugar levels are trending low recently. Please make sure it does not get too low.
 
 I'll keep an eye on this condition through Ola.</string>
                                 <attributes>
@@ -894,13 +888,13 @@ Keep up the good work!
     </scenes>
     <resources>
         <image name="blood_icon" width="25" height="25"/>
+        <image name="blue_dot" width="12" height="12"/>
         <image name="doc_comm_icon" width="25" height="25"/>
         <image name="food_icon" width="25" height="25"/>
         <image name="glucose_breakdown" width="481" height="289"/>
         <image name="home_icon" width="25" height="25"/>
         <image name="insulin_icon" width="25" height="25"/>
-        <image name="moo" width="12" height="12"/>
-        <image name="new_bolus_graph" width="188" height="91"/>
+        <image name="new_bolus_graph" width="450" height="230"/>
         <image name="std_wave" width="120" height="70"/>
     </resources>
     <inferredMetricsTieBreakers>
