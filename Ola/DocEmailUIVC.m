@@ -53,15 +53,10 @@
     
     [alert addButtonWithTitle:@"Confirm"];
     [alert show];
-    
-    
-   
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    NSLog(@"Button Index =%ld",buttonIndex);
-
     if (buttonIndex == 0)
     {
         NSLog(@"You have clicked Cancel");

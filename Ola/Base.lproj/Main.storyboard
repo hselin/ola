@@ -1,14 +1,210 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Food Items-->
+        <scene sceneID="Rii-cq-i4E">
+            <objects>
+                <tableViewController id="UFE-Ev-Y6H" customClass="FoodItemsTVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="AWC-FP-ffo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Food Item Cell" textLabel="kAa-aH-PF6" detailTextLabel="g4V-wf-4fU" style="IBUITableViewCellStyleValue1" id="1Hn-va-LMR">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Hn-va-LMR" id="IIO-Ne-MK5">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kAa-aH-PF6">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g4V-wf-4fU">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="UFE-Ev-Y6H" id="mSF-28-j1t"/>
+                            <outlet property="delegate" destination="UFE-Ev-Y6H" id="c6c-e0-ufJ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Food Items" id="k4G-7K-135">
+                        <barButtonItem key="leftBarButtonItem" title="Calculate Insulin" id="bko-y1-6Jc">
+                            <connections>
+                                <segue destination="mjb-PN-fWn" kind="push" identifier="insulin Injection" id="FPX-p6-TZn"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="+" id="NyN-84-u3N">
+                            <connections>
+                                <action selector="newFoodItemTap:" destination="UFE-Ev-Y6H" id="nR7-UN-RQ9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="foodNameTableView" destination="xZS-an-8EN" id="fLI-8j-DHw"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oQb-cm-oN8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="xZS-an-8EN">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <prototypes>
+                        <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Food Name Cell" textLabel="1FP-rh-AUT" detailTextLabel="E64-MT-5Ds" style="IBUITableViewCellStyleValue1" id="cBK-TB-ojK">
+                            <autoresizingMask key="autoresizingMask"/>
+                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cBK-TB-ojK" id="W7j-0q-pQp">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1FP-rh-AUT">
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E64-MT-5Ds">
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </tableViewCellContentView>
+                        </tableViewCell>
+                    </prototypes>
+                </tableView>
+            </objects>
+            <point key="canvasLocation" x="-1586" y="-3971"/>
+        </scene>
+        <!--Insulin Injection-->
+        <scene sceneID="hjA-6L-XzJ">
+            <objects>
+                <viewController id="mjb-PN-fWn" customClass="InsulinInjectionVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fi7-2N-RsC"/>
+                        <viewControllerLayoutGuide type="bottom" id="8ek-po-atV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="76j-XS-uX5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommended insulin level" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAQ-xV-xi4">
+                                <rect key="frame" x="195" y="72" width="211" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="JP9-Vw-7QY"/>
+                                    <constraint firstAttribute="width" constant="211" id="rYB-Sd-l6A"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RlR-Y1-9T2">
+                                <rect key="frame" x="175" y="268" width="251" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="251" id="5Ne-23-M8I"/>
+                                    <constraint firstAttribute="height" constant="28" id="lKg-hD-rE6"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Dual"/>
+                                    <segment title="Multi"/>
+                                </segments>
+                                <connections>
+                                    <action selector="waveFormSelectionChanged:" destination="mjb-PN-fWn" eventType="valueChanged" id="5tP-DH-dck"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="htv-Fp-btj">
+                                <rect key="frame" x="219" y="106" width="163" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Avp-Sd-ySY"/>
+                                    <constraint firstAttribute="width" constant="163" id="qTV-Eh-PDV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="std_wave" translatesAutoresizingMaskIntoConstraints="NO" id="QPY-gm-N4q">
+                                <rect key="frame" x="210" y="332" width="181" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="181" id="OeW-xK-ANg"/>
+                                    <constraint firstAttribute="height" constant="85" id="gKb-hX-NxF"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLg-hX-WKF">
+                                <rect key="frame" x="252" y="464" width="96" height="30"/>
+                                <state key="normal" title="Start Injection">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startInjection:" destination="mjb-PN-fWn" eventType="touchUpInside" id="WhR-gf-lLA"/>
+                                </connections>
+                            </button>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="wWu-dl-IlB">
+                                <rect key="frame" x="253" y="152" width="94" height="29"/>
+                                <connections>
+                                    <action selector="insulinAmountStepperValueChanged:" destination="mjb-PN-fWn" eventType="valueChanged" id="2X5-P3-Gye"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Units" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vT-Yk-GXH">
+                                <rect key="frame" x="390" y="110" width="40" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery Rate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdd-VF-EGZ">
+                                <rect key="frame" x="249" y="239" width="102" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qAQ-xV-xi4" firstAttribute="top" secondItem="fi7-2N-RsC" secondAttribute="bottom" constant="8" symbolic="YES" id="1Bo-Ul-Uwb"/>
+                            <constraint firstAttribute="centerX" secondItem="qAQ-xV-xi4" secondAttribute="centerX" id="Dq6-0A-acf"/>
+                            <constraint firstItem="htv-Fp-btj" firstAttribute="centerY" secondItem="7vT-Yk-GXH" secondAttribute="centerY" constant="0.5" id="IxY-0F-9cx"/>
+                            <constraint firstAttribute="centerX" secondItem="wWu-dl-IlB" secondAttribute="centerX" id="JZe-Du-dV3"/>
+                            <constraint firstAttribute="centerX" secondItem="FLg-hX-WKF" secondAttribute="centerX" id="TIy-E8-Hhb"/>
+                            <constraint firstItem="RlR-Y1-9T2" firstAttribute="top" secondItem="Tdd-VF-EGZ" secondAttribute="bottom" constant="8" symbolic="YES" id="V46-iN-0Kk"/>
+                            <constraint firstItem="FLg-hX-WKF" firstAttribute="top" secondItem="QPY-gm-N4q" secondAttribute="bottom" constant="47" id="Vem-S9-1I5"/>
+                            <constraint firstAttribute="centerX" secondItem="htv-Fp-btj" secondAttribute="centerX" id="XUx-HK-a2Q"/>
+                            <constraint firstItem="QPY-gm-N4q" firstAttribute="top" secondItem="RlR-Y1-9T2" secondAttribute="bottom" constant="36" id="jf8-QO-EdC"/>
+                            <constraint firstItem="htv-Fp-btj" firstAttribute="top" secondItem="qAQ-xV-xi4" secondAttribute="bottom" constant="13" id="kmG-zq-2ii"/>
+                            <constraint firstItem="Tdd-VF-EGZ" firstAttribute="centerX" secondItem="RlR-Y1-9T2" secondAttribute="centerX" id="lnX-9p-rpu"/>
+                            <constraint firstAttribute="centerX" secondItem="QPY-gm-N4q" secondAttribute="centerX" id="mSd-Fd-s1V"/>
+                            <constraint firstItem="7vT-Yk-GXH" firstAttribute="leading" secondItem="htv-Fp-btj" secondAttribute="trailing" constant="8" id="n4S-Py-BEh"/>
+                            <constraint firstItem="wWu-dl-IlB" firstAttribute="top" secondItem="htv-Fp-btj" secondAttribute="bottom" constant="16" id="ng0-H2-pBh"/>
+                            <constraint firstItem="8ek-po-atV" firstAttribute="top" secondItem="FLg-hX-WKF" secondAttribute="bottom" constant="57" id="qUR-10-pSF"/>
+                            <constraint firstAttribute="centerX" secondItem="RlR-Y1-9T2" secondAttribute="centerX" id="yCJ-aE-bxk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Insulin Injection" id="zOq-6d-XPd"/>
+                    <connections>
+                        <outlet property="insulinAmountInput" destination="htv-Fp-btj" id="I4a-QT-hE1"/>
+                        <outlet property="insulinAmountStepper" destination="wWu-dl-IlB" id="fKi-LM-IBp"/>
+                        <outlet property="waveFormGraphImageView" destination="QPY-gm-N4q" id="UNm-7M-eVZ"/>
+                        <outlet property="waveFormSelector" destination="RlR-Y1-9T2" id="ilU-ut-ysN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ipF-AG-Bcl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-754" y="-3971"/>
+        </scene>
+        <!--OlaTBC-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="OlaTBC" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -16,16 +212,17 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="CcJ-mn-BRm" kind="relationship" relationship="viewControllers" id="qmG-mS-XV7"/>
-                        <segue destination="jZP-1p-Ebm" kind="relationship" relationship="viewControllers" id="JAB-5h-wUq"/>
-                        <segue destination="sZu-0Q-fJT" kind="relationship" relationship="viewControllers" id="wAj-OT-heI"/>
+                        <outlet property="tabBar" destination="W28-zg-YXA" id="Zpc-iB-bAx"/>
                         <segue destination="dPo-Z0-4hs" kind="relationship" relationship="viewControllers" id="vWD-tS-Wk0"/>
                         <segue destination="vSI-3V-VNA" kind="relationship" relationship="viewControllers" id="X03-Sb-eGx"/>
+                        <segue destination="CcJ-mn-BRm" kind="relationship" relationship="viewControllers" id="qmG-mS-XV7"/>
+                        <segue destination="8H1-Gf-f88" kind="relationship" relationship="viewControllers" id="zzR-bh-LNO"/>
+                        <segue destination="jZP-1p-Ebm" kind="relationship" relationship="viewControllers" id="JAB-5h-wUq"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1076" y="-1280"/>
+            <point key="canvasLocation" x="-3206" y="-1590"/>
         </scene>
         <!--Doctor Communication-->
         <scene sceneID="zTA-vH-IY1">
@@ -46,7 +243,7 @@
                         <sections>
                             <tableViewSection id="SRK-8O-wlY">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="jo3-1f-sGu" detailTextLabel="aZT-Nk-hA3" style="IBUITableViewCellStyleSubtitle" id="irj-RT-P0B">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="jo3-1f-sGu" detailTextLabel="ZhP-1J-yqK" style="IBUITableViewCellStyleSubtitle" id="irj-RT-P0B">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="irj-RT-P0B" id="mwz-lQ-cro">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -58,16 +255,25 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Dr. Holmes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aZT-Nk-hA3">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Dr. Holmes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZhP-1J-yqK">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blue_dot" translatesAutoresizingMaskIntoConstraints="NO" id="035-ZB-7mH">
+                                                    <rect key="frame" x="2" y="20" width="8" height="8"/>
+                                                </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="jo3-1f-sGu" firstAttribute="leading" secondItem="035-ZB-7mH" secondAttribute="trailing" constant="5" id="Vv4-Ze-UjP"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="035-ZB-7mH" secondAttribute="bottom" constant="7" id="Wcl-eA-xqr"/>
+                                                <constraint firstItem="035-ZB-7mH" firstAttribute="leading" secondItem="mwz-lQ-cro" secondAttribute="leadingMargin" constant="-6" id="aGJ-rR-yWE"/>
+                                                <constraint firstItem="035-ZB-7mH" firstAttribute="top" secondItem="mwz-lQ-cro" secondAttribute="topMargin" constant="12" id="oa3-LW-bHf"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="g5h-Hc-ca7" kind="push" id="vWb-Wz-sVk"/>
+                                            <segue destination="g5h-Hc-ca7" kind="push" identifier="new bolus ratio" id="vWb-Wz-sVk"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="gHf-2C-gb9" detailTextLabel="IHD-KW-l3z" style="IBUITableViewCellStyleSubtitle" id="6B6-of-3If">
@@ -127,13 +333,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Doctor Communication" id="h27-mS-Vwb">
-                        <barButtonItem key="rightBarButtonItem" title="New mail" id="9ah-C3-L97">
+                        <barButtonItem key="rightBarButtonItem" title="New Email" id="9ah-C3-L97">
                             <connections>
                                 <segue destination="5yw-Ae-ahN" kind="presentation" identifier="newEmail" id="0IM-UK-Gch"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="unreadimage" destination="035-ZB-7mH" id="lSp-Bh-LSm"/>
                         <outletCollection property="staticCells" destination="irj-RT-P0B" id="cya-bb-lHd"/>
                         <outletCollection property="staticCells" destination="6B6-of-3If" id="CnL-vK-FFR"/>
                         <outletCollection property="staticCells" destination="giM-7N-A2b" id="jyd-D3-eJZ"/>
@@ -141,7 +348,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Qh-2E-DoU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1411" y="-450"/>
+            <point key="canvasLocation" x="-1349" y="-1612"/>
         </scene>
         <!--Your new bolus ratio-->
         <scene sceneID="BOn-9i-ywk">
@@ -155,7 +362,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gRh-Tx-pau">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gRh-Tx-pau">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
@@ -170,11 +377,9 @@
                                     <fragment>
                                         <string key="content">Date: October 27, 2015 at 6:00 PM
 
-I've noticed that you experienced several low blood sugar 
-events during Monday mornings for the last few month.
+I've noticed that you experienced several low blood sugar events during Monday mornings for the last few month.
 
-I would like to decrease your bolus ratio from 10 g/unit 
-to 8 g/unit during Monday mornings.</string>
+I would like to decrease your bolus ratio from 10 g/unit to 8 g/unit during Monday mornings.</string>
                                         <attributes>
                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
@@ -183,11 +388,15 @@ to 8 g/unit during Monday mornings.</string>
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="new_bolus_graph" translatesAutoresizingMaskIntoConstraints="NO" id="KTP-2M-bty">
-                                <rect key="frame" x="211" y="305" width="178" height="83"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="new_bolus_graph" translatesAutoresizingMaskIntoConstraints="NO" id="KTP-2M-bty">
+                                <rect key="frame" x="211" y="305" width="178" height="91"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="178" id="Gko-CI-2wD"/>
+                                    <constraint firstAttribute="height" constant="91" id="agH-Y2-UuL"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ue-5R-hHb">
-                                <rect key="frame" x="271" y="446" width="58" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ue-5R-hHb">
+                                <rect key="frame" x="271" y="404" width="58" height="30"/>
                                 <state key="normal" title="Approve">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -198,8 +407,14 @@ to 8 g/unit during Monday mornings.</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="6Ue-5R-hHb" secondAttribute="centerX" id="Frv-Q0-TFy"/>
-                            <constraint firstAttribute="centerX" secondItem="KTP-2M-bty" secondAttribute="centerX" id="UQF-6M-lOa"/>
+                            <constraint firstItem="6Ue-5R-hHb" firstAttribute="top" secondItem="KTP-2M-bty" secondAttribute="bottom" constant="8" symbolic="YES" id="4k0-34-FIs"/>
+                            <constraint firstItem="gRh-Tx-pau" firstAttribute="leading" secondItem="j8g-DQ-qgW" secondAttribute="leading" id="9xf-Lg-g2T"/>
+                            <constraint firstItem="KTP-2M-bty" firstAttribute="centerX" secondItem="gRh-Tx-pau" secondAttribute="centerX" id="DCY-4h-FNx"/>
+                            <constraint firstAttribute="centerX" secondItem="KTP-2M-bty" secondAttribute="centerX" id="EdD-R9-edj"/>
+                            <constraint firstAttribute="centerX" secondItem="6Ue-5R-hHb" secondAttribute="centerX" id="Eep-7w-oAL"/>
+                            <constraint firstItem="gRh-Tx-pau" firstAttribute="top" secondItem="j8g-DQ-qgW" secondAttribute="top" id="TtB-d7-HF6"/>
+                            <constraint firstItem="Iqz-4d-NsE" firstAttribute="top" secondItem="6Ue-5R-hHb" secondAttribute="bottom" constant="122" id="oaT-yV-fH8"/>
+                            <constraint firstAttribute="bottom" secondItem="gRh-Tx-pau" secondAttribute="bottom" id="qKX-bu-qIS"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -221,7 +436,7 @@ to 8 g/unit during Monday mornings.</string>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
             </objects>
-            <point key="canvasLocation" x="2421" y="-1252"/>
+            <point key="canvasLocation" x="-347" y="-1612"/>
         </scene>
         <!--EmailUIVC-->
         <scene sceneID="Mbl-fY-kz5">
@@ -341,106 +556,166 @@ to 8 g/unit during Monday mornings.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wRi-rZ-DpL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3332" y="-993"/>
+            <point key="canvasLocation" x="957" y="-1234"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="l25-6n-iaZ">
             <objects>
-                <viewController id="CcJ-mn-BRm" sceneMemberID="viewController">
+                <viewController id="CcJ-mn-BRm" customClass="HomeScreenVC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ev8-2s-fMV"/>
-                        <viewControllerLayoutGuide type="bottom" id="wiu-CF-sXt"/>
+                        <viewControllerLayoutGuide type="top" id="gAY-Yb-5JK"/>
+                        <viewControllerLayoutGuide type="bottom" id="u8K-Hg-RQh"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="veB-uv-V0A">
+                    <view key="view" contentMode="scaleToFill" id="ozu-KF-WVX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glucose_breakdown" translatesAutoresizingMaskIntoConstraints="NO" id="H0T-Wz-RmI">
+                                <rect key="frame" x="150" y="210" width="300" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="UM7-AJ-lsZ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Glucose History (past 7 days)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqo-ix-eH1">
+                                <rect key="frame" x="188" y="127" width="225" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UjW-oq-0hV">
+                                <rect key="frame" x="218" y="174" width="165" height="29"/>
+                                <segments>
+                                    <segment title="Breakdown"/>
+                                    <segment title="Details"/>
+                                </segments>
+                                <connections>
+                                    <action selector="chartTypeSelector:" destination="CcJ-mn-BRm" eventType="valueChanged" id="CVw-4n-4oA"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="H0T-Wz-RmI" firstAttribute="top" secondItem="UjW-oq-0hV" secondAttribute="bottom" constant="8" symbolic="YES" id="2FD-F5-hYy"/>
+                            <constraint firstAttribute="centerX" secondItem="UjW-oq-0hV" secondAttribute="centerX" id="8tb-R0-ebb"/>
+                            <constraint firstItem="H0T-Wz-RmI" firstAttribute="centerY" secondItem="ozu-KF-WVX" secondAttribute="centerY" id="FMp-V2-L9D"/>
+                            <constraint firstItem="u8K-Hg-RQh" firstAttribute="top" secondItem="H0T-Wz-RmI" secondAttribute="bottom" constant="161" id="FQE-uY-1L2"/>
+                            <constraint firstItem="UjW-oq-0hV" firstAttribute="top" secondItem="mqo-ix-eH1" secondAttribute="bottom" constant="26" id="gmm-xi-A8w"/>
+                            <constraint firstAttribute="centerX" secondItem="H0T-Wz-RmI" secondAttribute="centerX" id="hac-U9-lNF"/>
+                            <constraint firstAttribute="centerX" secondItem="mqo-ix-eH1" secondAttribute="centerX" id="k7t-No-UK3"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="J3y-Oj-mcH" appends="YES" id="EcA-SX-xhN"/>
+                        </connections>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="home_icon" id="8Ok-el-FJc"/>
+                    <connections>
+                        <outlet property="chartImageView" destination="H0T-Wz-RmI" id="Q5z-Zn-LVV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="092-Ot-Pri" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" numberOfTouchesRequired="2" id="J3y-Oj-mcH">
+                    <connections>
+                        <action selector="triggerLockScreen:" destination="CcJ-mn-BRm" id="f2N-2m-fit"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-3206" y="-584"/>
+        </scene>
+        <!--EmergencyVC-->
+        <scene sceneID="Jl2-SY-ITz">
+            <objects>
+                <viewController storyboardIdentifier="EmergencyInstruction" id="jge-qH-d0i" customClass="EmergencyVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VRc-pe-LL2"/>
+                        <viewControllerLayoutGuide type="bottom" id="c4M-pg-bRe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NiD-Ur-CZJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mR2-8N-6yw">
-                                <rect key="frame" x="231" y="145" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="EMERGENCY ：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqQ-ju-DXk">
+                                <rect key="frame" x="215" y="37" width="171" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSx-Yg-AcN">
+                                <rect key="frame" x="266" y="396" width="68" height="30"/>
+                                <state key="normal" title="CALL 911">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="call_911:" destination="jge-qH-d0i" eventType="touchUpInside" id="ptx-hT-8Uo"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="THIS PERSON HAS TYPE ONE DIABETICS. AND HAS LOST CONSCIOUSNESS DUE TO SEVERE LOW BLOOD SUGAR." translatesAutoresizingMaskIntoConstraints="NO" id="z0t-Eh-iPX">
+                                <rect key="frame" x="86" y="132" width="428" height="93"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="93" id="y0E-9n-qHU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="PLEASE RESPOND" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tfc-go-gvm">
+                                <rect key="frame" x="182" y="66" width="237" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="PARAMEDICS ARE ON THE WAY(ETA 6MIN). PLEASE CALL FOR FURTHER INSTRUCTION:" translatesAutoresizingMaskIntoConstraints="NO" id="RTZ-ms-NGe">
+                                <rect key="frame" x="86" y="249" width="428" height="117"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="117" id="Nh4-fL-Sg7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9e-82-7Hj">
+                                <rect key="frame" x="194" y="455" width="212" height="30"/>
+                                <state key="normal" title="CALL EMERGENCY CONTACT">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="call_emergency_contact:" destination="jge-qH-d0i" eventType="touchUpInside" id="nqu-An-Xqf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="8Ok-el-FJc"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="092-Ot-Pri" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-532" y="64"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="LLT-LP-eZH">
-            <objects>
-                <tableViewController id="PKI-RA-PGY" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="k9W-2Q-tqq">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="35p-Pc-jdl">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aNG-DT-oTV">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aNG-DT-oTV" id="1kG-La-7r1">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="L9e-82-7Hj" firstAttribute="top" secondItem="zSx-Yg-AcN" secondAttribute="bottom" constant="29" id="0Bn-XU-rmi"/>
+                            <constraint firstItem="z0t-Eh-iPX" firstAttribute="centerX" secondItem="zSx-Yg-AcN" secondAttribute="centerX" id="C9n-LH-P3N"/>
+                            <constraint firstItem="z0t-Eh-iPX" firstAttribute="top" secondItem="NiD-Ur-CZJ" secondAttribute="top" constant="132" id="D8p-7o-zQ1"/>
+                            <constraint firstItem="z0t-Eh-iPX" firstAttribute="centerX" secondItem="Tfc-go-gvm" secondAttribute="centerX" id="Iyi-JR-zh4"/>
+                            <constraint firstItem="z0t-Eh-iPX" firstAttribute="leading" secondItem="NiD-Ur-CZJ" secondAttribute="leadingMargin" constant="70" id="QHB-62-pWc"/>
+                            <constraint firstItem="RTZ-ms-NGe" firstAttribute="leading" secondItem="z0t-Eh-iPX" secondAttribute="leading" id="QPv-xY-4YG"/>
+                            <constraint firstItem="zSx-Yg-AcN" firstAttribute="top" secondItem="RTZ-ms-NGe" secondAttribute="bottom" constant="30" id="RSv-Q9-aby"/>
+                            <constraint firstItem="zSx-Yg-AcN" firstAttribute="centerX" secondItem="L9e-82-7Hj" secondAttribute="centerX" id="UDT-mf-DDw"/>
+                            <constraint firstItem="RTZ-ms-NGe" firstAttribute="trailing" secondItem="z0t-Eh-iPX" secondAttribute="trailing" id="YO3-tt-Ttn"/>
+                            <constraint firstItem="RTZ-ms-NGe" firstAttribute="top" secondItem="z0t-Eh-iPX" secondAttribute="bottom" constant="24" id="an0-6A-nC7"/>
+                            <constraint firstItem="z0t-Eh-iPX" firstAttribute="top" secondItem="Tfc-go-gvm" secondAttribute="bottom" constant="44" id="fma-N3-mOJ"/>
+                            <constraint firstItem="z0t-Eh-iPX" firstAttribute="centerX" secondItem="qqQ-ju-DXk" secondAttribute="centerX" id="j9i-kX-5to"/>
+                            <constraint firstItem="qqQ-ju-DXk" firstAttribute="top" secondItem="VRc-pe-LL2" secondAttribute="bottom" constant="17" id="lNw-5d-3Fw"/>
+                            <constraint firstItem="z0t-Eh-iPX" firstAttribute="centerX" secondItem="NiD-Ur-CZJ" secondAttribute="centerX" id="qQ2-jS-u67"/>
+                        </constraints>
                         <connections>
-                            <outlet property="dataSource" destination="PKI-RA-PGY" id="lKw-wx-Ezp"/>
-                            <outlet property="delegate" destination="PKI-RA-PGY" id="sUm-QF-VT6"/>
+                            <outletCollection property="gestureRecognizers" destination="tkV-Bx-bOh" appends="YES" id="cIQ-qm-LKO"/>
                         </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bdv-66-bhS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1136" y="885"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="i2b-w1-qW5">
-            <objects>
-                <viewController id="sZu-0Q-fJT" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="KoA-w7-xGk"/>
-                        <viewControllerLayoutGuide type="bottom" id="TZ9-g0-tWr"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mOz-ZO-Kii">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="KUk-A0-s6l"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fLN-Of-LtP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" id="eKp-BB-b2D">
-                    <rect key="frame" x="0.0" y="0.0" width="577" height="291"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <attributedString key="attributedText">
-                        <fragment>
-                            <string key="content">From: Dr. Holmes
-Date: October 27, 2015 at 6:00 PM
-
-I've noticed that you experienced several low blood sugar events during Monday mornings for the last few month.
-
-I would like to decrease your bolus ratio from 10 g/unit for to 8 g/unit during Monday mornings to see if that helps any.</string>
-                            <attributes>
-                                <font key="NSFont" size="12" name=".LucidaGrandeUI"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                    </attributedString>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fiw-UU-vbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" numberOfTouchesRequired="2" id="tkV-Bx-bOh">
+                    <connections>
+                        <action selector="dismiss:" destination="jge-qH-d0i" id="mio-YA-ZKH"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-472" y="-3127"/>
+            <point key="canvasLocation" x="-2327" y="-584"/>
         </scene>
-        <!--Item-->
+        <!--Glucose-->
         <scene sceneID="GW8-Ha-ipg">
             <objects>
                 <viewController id="dPo-Z0-4hs" sceneMemberID="viewController">
@@ -451,15 +726,32 @@ I would like to decrease your bolus ratio from 10 g/unit for to 8 g/unit during 
                     <view key="view" contentMode="scaleToFill" id="8rS-zS-3Eh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming soon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CGh-qd-UbG">
+                                <rect key="frame" x="249" y="289" width="103" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="CGh-qd-UbG" secondAttribute="centerX" id="kO0-ib-da9"/>
+                            <constraint firstAttribute="centerY" secondItem="CGh-qd-UbG" secondAttribute="centerY" id="kYD-a7-Ixi"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Zby-FJ-9HD" appends="YES" id="byb-ue-xqD"/>
+                        </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Ca1-uC-EpJ"/>
+                    <tabBarItem key="tabBarItem" title="Glucose" image="blood_icon" id="Ca1-uC-EpJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nms-vn-V5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" numberOfTouchesRequired="2" id="Zby-FJ-9HD"/>
             </objects>
-            <point key="canvasLocation" x="776" y="-2821"/>
+            <point key="canvasLocation" x="-2382" y="-3189"/>
         </scene>
-        <!--Item-->
+        <!--Insulin-->
         <scene sceneID="Kjg-Ax-whS">
             <objects>
                 <viewController id="vSI-3V-VNA" sceneMemberID="viewController">
@@ -470,19 +762,31 @@ I would like to decrease your bolus ratio from 10 g/unit for to 8 g/unit during 
                     <view key="view" contentMode="scaleToFill" id="yy0-Tj-zFj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming soon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CW0-4Y-nvI">
+                                <rect key="frame" x="249" y="289" width="103" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="CW0-4Y-nvI" secondAttribute="centerY" id="M9u-sP-jhs"/>
+                            <constraint firstAttribute="centerX" secondItem="CW0-4Y-nvI" secondAttribute="centerX" id="UbQ-fW-hPU"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="rE9-2m-WIc"/>
+                    <tabBarItem key="tabBarItem" title="Insulin" image="insulin_icon" id="rE9-2m-WIc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lxi-NM-fMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1774" y="-2806"/>
+            <point key="canvasLocation" x="-2382" y="-2390"/>
         </scene>
-        <!--Doctor Communication-->
+        <!--Doctor Comm-->
         <scene sceneID="Ozd-AP-DC8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jZP-1p-Ebm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Doctor Communication" id="tZC-ZX-L8A"/>
+                    <tabBarItem key="tabBarItem" title="Doctor Comm" image="doc_comm_icon" id="tZC-ZX-L8A"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0j1-38-7cp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -495,7 +799,7 @@ I would like to decrease your bolus ratio from 10 g/unit for to 8 g/unit during 
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="19V-MS-Wvz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="745" y="-708"/>
+            <point key="canvasLocation" x="-2391" y="-1612"/>
         </scene>
         <!--Low blood sugar-->
         <scene sceneID="0k3-MI-1ZB">
@@ -510,8 +814,7 @@ I would like to decrease your bolus ratio from 10 g/unit for to 8 g/unit during 
                                 <string key="content">From: Dr. Holmes
 Date: October 20, 2015 at 2:00 PM
 
-Seems your blood sugar levels are trending low recently.
-Please make sure it does not get too low.
+Seems your blood sugar levels are trending low recently. Please make sure it does not get too low.
 
 I'll keep an eye on this condition through Ola.</string>
                                 <attributes>
@@ -532,7 +835,7 @@ I'll keep an eye on this condition through Ola.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9C6-Nx-iH8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2426" y="-594"/>
+            <point key="canvasLocation" x="-1342" y="-770"/>
         </scene>
         <!--Your insulin level-->
         <scene sceneID="JjY-R7-ZMz">
@@ -570,13 +873,40 @@ Keep up the good work!
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wl3-aO-4fF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2426" y="82"/>
+            <point key="canvasLocation" x="-347" y="-770"/>
+        </scene>
+        <!--Food-->
+        <scene sceneID="hgc-w3-7ZI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8H1-Gf-f88" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Food" image="food_icon" id="QeT-0a-8xe"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tx9-fr-EcQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UFE-Ev-Y6H" kind="relationship" relationship="rootViewController" id="uAn-hq-rZ3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JqE-0w-Aa3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2382" y="-3971"/>
         </scene>
     </scenes>
     <resources>
-        <image name="new_bolus_graph" width="188" height="91"/>
+        <image name="blood_icon" width="25" height="25"/>
+        <image name="blue_dot" width="12" height="12"/>
+        <image name="doc_comm_icon" width="25" height="25"/>
+        <image name="food_icon" width="25" height="25"/>
+        <image name="glucose_breakdown" width="481" height="289"/>
+        <image name="home_icon" width="25" height="25"/>
+        <image name="insulin_icon" width="25" height="25"/>
+        <image name="new_bolus_graph" width="450" height="230"/>
+        <image name="std_wave" width="120" height="70"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0oX-hA-0J0"/>
+        <segue reference="0IM-UK-Gch"/>
     </inferredMetricsTieBreakers>
 </document>

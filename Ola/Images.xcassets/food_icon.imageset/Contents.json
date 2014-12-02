@@ -3,11 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "new_ratio.png"
+      "filename" : "vegetarian_food-25.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "vegetarian_food-50.png"
     },
     {
       "idiom" : "universal",
