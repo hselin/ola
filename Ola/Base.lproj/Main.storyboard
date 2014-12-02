@@ -684,6 +684,7 @@ I would like to decrease your bolus ratio from 10 g/unit to 8 g/unit during Mond
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="L9e-82-7Hj" firstAttribute="top" secondItem="zSx-Yg-AcN" secondAttribute="bottom" constant="29" id="0Bn-XU-rmi"/>
                             <constraint firstItem="z0t-Eh-iPX" firstAttribute="centerX" secondItem="zSx-Yg-AcN" secondAttribute="centerX" id="C9n-LH-P3N"/>
@@ -700,9 +701,17 @@ I would like to decrease your bolus ratio from 10 g/unit to 8 g/unit during Mond
                             <constraint firstItem="qqQ-ju-DXk" firstAttribute="top" secondItem="VRc-pe-LL2" secondAttribute="bottom" constant="17" id="lNw-5d-3Fw"/>
                             <constraint firstItem="z0t-Eh-iPX" firstAttribute="centerX" secondItem="NiD-Ur-CZJ" secondAttribute="centerX" id="qQ2-jS-u67"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="tkV-Bx-bOh" appends="YES" id="cIQ-qm-LKO"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fiw-UU-vbE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" numberOfTouchesRequired="2" id="tkV-Bx-bOh">
+                    <connections>
+                        <action selector="dismiss:" destination="jge-qH-d0i" id="mio-YA-ZKH"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-2327" y="-584"/>
         </scene>

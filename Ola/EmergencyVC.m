@@ -94,4 +94,8 @@
     [alert show];
 }
 
+- (IBAction)dismiss:(id)sender
+{
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
 @end
