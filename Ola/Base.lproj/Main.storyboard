@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jge-qH-d0i">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -670,8 +670,8 @@ I would like to decrease your bolus ratio from 10 g/unit to 8 g/unit during Mond
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqQ-ju-DXk">
                                 <rect key="frame" x="164" y="32" width="272" height="26"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="26" id="U4y-Xs-wVq"/>
-                                    <constraint firstAttribute="width" constant="272" id="rN5-oP-5KX"/>
+                                    <constraint firstAttribute="height" constant="26" id="Kau-U7-cIr"/>
+                                    <constraint firstAttribute="width" constant="272" id="kUV-6e-wrK"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="EMERGENCY">
@@ -686,12 +686,12 @@ I would like to decrease your bolus ratio from 10 g/unit to 8 g/unit during Mond
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSx-Yg-AcN">
-                                <rect key="frame" x="239" y="396" width="118" height="30"/>
+                                <rect key="frame" x="241" y="396" width="118" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="SPd-5g-MLn"/>
-                                    <constraint firstAttribute="width" constant="118" id="b5m-ND-wPK"/>
+                                    <constraint firstAttribute="height" constant="30" id="Xta-xg-UgG"/>
+                                    <constraint firstAttribute="width" constant="118" id="ehN-JH-Or9"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="CALL 911">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -699,41 +699,39 @@ I would like to decrease your bolus ratio from 10 g/unit to 8 g/unit during Mond
                                     <action selector="call_911:" destination="jge-qH-d0i" eventType="touchUpInside" id="ptx-hT-8Uo"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="THIS PERSON HAS TYPE ONE DIABETICS. AND HAS LOST CONSCIOUSNESS DUE TO SEVERE LOW BLOOD SUGAR." translatesAutoresizingMaskIntoConstraints="NO" id="z0t-Eh-iPX">
-                                <rect key="frame" x="25" y="132" width="550" height="119"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="THIS PERSON HAS TYPE ONE DIABETICS AND HAS LOST CONSCIOUSNESS DUE TO SEVERE LOW BLOOD SUGAR." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="z0t-Eh-iPX">
+                                <rect key="frame" x="25" y="132" width="550" height="84"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="119" id="sKG-Lc-ei9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLEASE RESPOND" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tfc-go-gvm">
                                 <rect key="frame" x="182" y="66" width="237" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="237" id="ehu-HT-b9d"/>
-                                    <constraint firstAttribute="height" constant="22" id="uLj-1T-EvR"/>
+                                    <constraint firstAttribute="width" constant="237" id="6gV-h6-2vf"/>
+                                    <constraint firstAttribute="height" constant="22" id="hUe-HQ-odo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="PARAMEDICS ARE ON THE WAY(ETA 6MIN). PLEASE CALL FOR FURTHER INSTRUCTION:" translatesAutoresizingMaskIntoConstraints="NO" id="RTZ-ms-NGe">
-                                <rect key="frame" x="25" y="248" width="547" height="117"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RTZ-ms-NGe">
+                                <rect key="frame" x="25" y="312" width="550" height="76"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="117" id="nA5-4n-19o"/>
+                                    <constraint firstAttribute="height" constant="76" id="UwQ-Mz-CDJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <string key="text">PLEASE CALL FOR FURTHER INSTRUCTIONS.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9e-82-7Hj">
                                 <rect key="frame" x="123" y="434" width="355" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="355" id="0R6-yA-8gw"/>
-                                    <constraint firstAttribute="height" constant="30" id="hSh-2K-ERv"/>
+                                    <constraint firstAttribute="height" constant="30" id="Ngn-Go-52B"/>
+                                    <constraint firstAttribute="width" constant="355" id="PZ4-W0-AVl"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="CALL EMERGENCY CONTACT">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -741,24 +739,37 @@ I would like to decrease your bolus ratio from 10 g/unit to 8 g/unit during Mond
                                     <action selector="call_emergency_contact:" destination="jge-qH-d0i" eventType="touchUpInside" id="nqu-An-Xqf"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="PARAMEDICS ARE ON THE WAY(ETA 6MIN)." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8EL-SP-m46">
+                                <rect key="frame" x="25" y="196" width="550" height="76"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="e19-aj-aIu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="zSx-Yg-AcN" firstAttribute="top" secondItem="RTZ-ms-NGe" secondAttribute="bottom" constant="31" id="1Ev-f6-Btd"/>
-                            <constraint firstItem="qqQ-ju-DXk" firstAttribute="centerX" secondItem="Tfc-go-gvm" secondAttribute="centerX" id="5Z2-Jh-RuB"/>
-                            <constraint firstItem="zSx-Yg-AcN" firstAttribute="centerX" secondItem="RTZ-ms-NGe" secondAttribute="centerX" id="CZG-ue-nIe"/>
-                            <constraint firstItem="c4M-pg-bRe" firstAttribute="top" secondItem="L9e-82-7Hj" secondAttribute="bottom" constant="136" id="MFm-Ls-exs"/>
-                            <constraint firstItem="RTZ-ms-NGe" firstAttribute="leading" secondItem="z0t-Eh-iPX" secondAttribute="leading" id="YmL-64-mam"/>
-                            <constraint firstItem="z0t-Eh-iPX" firstAttribute="top" secondItem="Tfc-go-gvm" secondAttribute="bottom" constant="44" id="ZA8-3z-Snh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="RTZ-ms-NGe" secondAttribute="trailing" constant="12" id="ghG-h7-UTm"/>
-                            <constraint firstItem="L9e-82-7Hj" firstAttribute="centerX" secondItem="z0t-Eh-iPX" secondAttribute="centerX" id="l04-Hq-dNR"/>
-                            <constraint firstItem="z0t-Eh-iPX" firstAttribute="leading" secondItem="NiD-Ur-CZJ" secondAttribute="leadingMargin" constant="9" id="mwa-0i-xZo"/>
-                            <constraint firstItem="Tfc-go-gvm" firstAttribute="centerX" secondItem="z0t-Eh-iPX" secondAttribute="centerX" id="s3t-Hf-NGO"/>
-                            <constraint firstItem="qqQ-ju-DXk" firstAttribute="top" secondItem="VRc-pe-LL2" secondAttribute="bottom" constant="12" id="vwn-xk-BW2"/>
-                            <constraint firstItem="Tfc-go-gvm" firstAttribute="top" secondItem="qqQ-ju-DXk" secondAttribute="bottom" constant="8" symbolic="YES" id="wAq-4O-nh2"/>
-                            <constraint firstItem="L9e-82-7Hj" firstAttribute="top" secondItem="zSx-Yg-AcN" secondAttribute="bottom" constant="8" symbolic="YES" id="ygl-3e-5T1"/>
-                            <constraint firstItem="Tfc-go-gvm" firstAttribute="centerX" secondItem="NiD-Ur-CZJ" secondAttribute="centerX" id="zjh-wE-2LB"/>
+                            <constraint firstItem="L9e-82-7Hj" firstAttribute="top" secondItem="zSx-Yg-AcN" secondAttribute="bottom" constant="8" symbolic="YES" id="0bD-pd-hXz"/>
+                            <constraint firstItem="z0t-Eh-iPX" firstAttribute="leading" secondItem="NiD-Ur-CZJ" secondAttribute="leadingMargin" constant="9" id="3BZ-fT-plp"/>
+                            <constraint firstAttribute="centerX" secondItem="Tfc-go-gvm" secondAttribute="centerX" id="4EF-Gr-jdx"/>
+                            <constraint firstItem="RTZ-ms-NGe" firstAttribute="top" secondItem="z0t-Eh-iPX" secondAttribute="bottom" constant="96" id="A1D-Hz-YcM"/>
+                            <constraint firstItem="zSx-Yg-AcN" firstAttribute="top" secondItem="RTZ-ms-NGe" secondAttribute="bottom" constant="8" symbolic="YES" id="BSn-aE-1qt"/>
+                            <constraint firstItem="Tfc-go-gvm" firstAttribute="top" secondItem="qqQ-ju-DXk" secondAttribute="bottom" constant="8" symbolic="YES" id="Dwz-pR-uDw"/>
+                            <constraint firstItem="z0t-Eh-iPX" firstAttribute="top" secondItem="Tfc-go-gvm" secondAttribute="bottom" constant="44" id="Jh3-zi-CpF"/>
+                            <constraint firstItem="c4M-pg-bRe" firstAttribute="top" secondItem="L9e-82-7Hj" secondAttribute="bottom" constant="136" id="Ql2-9S-zlr"/>
+                            <constraint firstItem="qqQ-ju-DXk" firstAttribute="top" secondItem="VRc-pe-LL2" secondAttribute="bottom" constant="12" id="QrM-dI-9qV"/>
+                            <constraint firstItem="RTZ-ms-NGe" firstAttribute="leading" secondItem="8EL-SP-m46" secondAttribute="leading" id="QrY-ch-LBd"/>
+                            <constraint firstAttribute="centerX" secondItem="zSx-Yg-AcN" secondAttribute="centerX" id="SMj-6t-P4i"/>
+                            <constraint firstItem="z0t-Eh-iPX" firstAttribute="leading" secondItem="8EL-SP-m46" secondAttribute="leading" id="XyX-pC-z8T"/>
+                            <constraint firstAttribute="centerX" secondItem="L9e-82-7Hj" secondAttribute="centerX" id="Zam-Dg-E3w"/>
+                            <constraint firstItem="RTZ-ms-NGe" firstAttribute="top" secondItem="8EL-SP-m46" secondAttribute="bottom" constant="40" id="fQa-u2-bIq"/>
+                            <constraint firstAttribute="centerX" secondItem="RTZ-ms-NGe" secondAttribute="centerX" id="maH-qV-qCk"/>
+                            <constraint firstAttribute="centerX" secondItem="8EL-SP-m46" secondAttribute="centerX" id="pDL-IB-jGe"/>
+                            <constraint firstAttribute="centerX" secondItem="qqQ-ju-DXk" secondAttribute="centerX" id="uwO-5G-cK7"/>
+                            <constraint firstAttribute="centerX" secondItem="z0t-Eh-iPX" secondAttribute="centerX" id="xWM-n0-dXc"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="tkV-Bx-bOh" appends="YES" id="cIQ-qm-LKO"/>
