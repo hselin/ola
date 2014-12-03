@@ -424,7 +424,7 @@
                                            cancelButtonTitle:@"Cancel"
                                            otherButtonTitles: nil];
     
-    [alert addButtonWithTitle:@"Food Camera"];
+    [alert addButtonWithTitle:@"Food camera"];
     [alert addButtonWithTitle:@"Carb count"];
     [alert addButtonWithTitle:@"Food name"];
     alert.tag = 0;

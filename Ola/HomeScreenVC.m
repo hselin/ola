@@ -20,7 +20,14 @@
     // Do any additional setup after loading the view.
     
     //self.graphImageView.contentMode = UIViewContentModeScaleAspectFit;
+    
+    UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background_image"]];
+    
+    [self.view addSubview:backgroundImage];
+    [self.view sendSubviewToBack:backgroundImage];
+    //[backgroundImage release];
 }
+
 - (IBAction)triggerLockScreen:(id)sender {
     UILocalNotification* n1 = [[UILocalNotification alloc] init];
     n1.fireDate = [NSDate dateWithTimeIntervalSinceNow: 10];
