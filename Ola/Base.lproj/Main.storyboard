@@ -813,7 +813,7 @@ ETA: 6 MIN</string>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Under Construction" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ond-Sr-zEj">
                                 <rect key="frame" x="225" y="157" width="151" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.1137254902" green="0.91372549020000005" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -858,7 +858,7 @@ ETA: 6 MIN</string>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Under Construction" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDK-3w-FcC">
                                 <rect key="frame" x="225" y="157" width="151" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.1137254902" green="0.91372549020000005" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -995,10 +995,10 @@ Keep up the good work!
         <image name="doc_comm_icon" width="25" height="25"/>
         <image name="food_icon" width="25" height="25"/>
         <image name="glucose_breakdown" width="749" height="449"/>
-        <image name="glucose_screen" width="682" height="524"/>
+        <image name="glucose_screen" width="754" height="453"/>
         <image name="home_icon" width="25" height="25"/>
         <image name="insulin_icon" width="25" height="25"/>
-        <image name="insulin_screen" width="752" height="453"/>
+        <image name="insulin_screen" width="751" height="451"/>
         <image name="new_bolus_graph" width="450" height="230"/>
         <image name="ola_logo" width="333" height="206"/>
         <image name="std_wave" width="120" height="70"/>
