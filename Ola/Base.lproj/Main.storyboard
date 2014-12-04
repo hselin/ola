@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -743,7 +743,8 @@ PLEASE CALL FOR FURTHER INSTRUCTIONS.</string>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="hxu-vo-VNH"/>
                                 </constraints>
-                                <string key="text">PARAMEDICS ARE ON THE WAYETA: 6 MIN</string>
+                                <string key="text">PARAMEDICS ARE ON THE WAY
+ETA: 6 MIN</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -797,8 +798,14 @@ PLEASE CALL FOR FURTHER INSTRUCTIONS.</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glucose" translatesAutoresizingMaskIntoConstraints="NO" id="rZV-HI-yqy">
+                                <rect key="frame" x="41" y="88" width="519" height="224"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="224" id="3nT-VN-EsC"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming soon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CGh-qd-UbG">
-                                <rect key="frame" x="249" y="290" width="103" height="21"/>
+                                <rect key="frame" x="249" y="408" width="103" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -807,8 +814,11 @@ PLEASE CALL FOR FURTHER INSTRUCTIONS.</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="CGh-qd-UbG" secondAttribute="centerX" id="kO0-ib-da9"/>
-                            <constraint firstAttribute="centerY" secondItem="CGh-qd-UbG" secondAttribute="centerY" id="kYD-a7-Ixi"/>
+                            <constraint firstItem="rZV-HI-yqy" firstAttribute="leading" secondItem="8rS-zS-3Eh" secondAttribute="leadingMargin" constant="25" id="64E-rh-3XD"/>
+                            <constraint firstItem="rZV-HI-yqy" firstAttribute="centerX" secondItem="8rS-zS-3Eh" secondAttribute="centerX" id="900-9a-R3S"/>
+                            <constraint firstItem="rZV-HI-yqy" firstAttribute="top" secondItem="yl9-iL-aNP" secondAttribute="bottom" constant="68" id="Ch1-s4-V6c"/>
+                            <constraint firstItem="93I-fm-DTc" firstAttribute="top" secondItem="CGh-qd-UbG" secondAttribute="bottom" constant="122" id="U5s-b9-vl5"/>
+                            <constraint firstItem="rZV-HI-yqy" firstAttribute="centerX" secondItem="CGh-qd-UbG" secondAttribute="centerX" id="z88-Hd-7SM"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Zby-FJ-9HD" appends="YES" id="byb-ue-xqD"/>
@@ -970,6 +980,7 @@ Keep up the good work!
         <image name="blue_dot" width="12" height="12"/>
         <image name="doc_comm_icon" width="25" height="25"/>
         <image name="food_icon" width="25" height="25"/>
+        <image name="glucose" width="682" height="524"/>
         <image name="glucose_breakdown" width="749" height="449"/>
         <image name="home_icon" width="25" height="25"/>
         <image name="insulin_icon" width="25" height="25"/>
