@@ -843,8 +843,14 @@ ETA: 6 MIN</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="insulin" translatesAutoresizingMaskIntoConstraints="NO" id="iwb-ET-3pq">
+                                <rect key="frame" x="46" y="73" width="510" height="231"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="196" id="M0y-b4-apk"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming soon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CW0-4Y-nvI">
-                                <rect key="frame" x="249" y="290" width="103" height="21"/>
+                                <rect key="frame" x="249" y="410" width="103" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -852,15 +858,18 @@ ETA: 6 MIN</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="CW0-4Y-nvI" secondAttribute="centerY" id="M9u-sP-jhs"/>
-                            <constraint firstAttribute="centerX" secondItem="CW0-4Y-nvI" secondAttribute="centerX" id="UbQ-fW-hPU"/>
+                            <constraint firstItem="pnh-6a-hEa" firstAttribute="top" secondItem="CW0-4Y-nvI" secondAttribute="bottom" constant="120" id="FGz-cL-vPt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iwb-ET-3pq" secondAttribute="trailing" constant="28" id="Jbf-8M-XJx"/>
+                            <constraint firstItem="iwb-ET-3pq" firstAttribute="leading" secondItem="yy0-Tj-zFj" secondAttribute="leadingMargin" constant="30" id="M31-8l-B0D"/>
+                            <constraint firstItem="iwb-ET-3pq" firstAttribute="top" secondItem="pfy-k8-qov" secondAttribute="bottom" constant="70" id="neg-QO-eKW"/>
+                            <constraint firstItem="CW0-4Y-nvI" firstAttribute="centerX" secondItem="yy0-Tj-zFj" secondAttribute="centerX" id="vuh-b4-FB9"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Insulin" image="insulin_icon" id="rE9-2m-WIc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lxi-NM-fMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2382" y="-2390"/>
+            <point key="canvasLocation" x="-2327" y="-2474"/>
         </scene>
         <!--Doctor Comm-->
         <scene sceneID="Ozd-AP-DC8">
@@ -983,6 +992,7 @@ Keep up the good work!
         <image name="glucose" width="682" height="524"/>
         <image name="glucose_breakdown" width="749" height="449"/>
         <image name="home_icon" width="25" height="25"/>
+        <image name="insulin" width="752" height="453"/>
         <image name="insulin_icon" width="25" height="25"/>
         <image name="new_bolus_graph" width="450" height="230"/>
         <image name="ola_logo" width="333" height="206"/>
