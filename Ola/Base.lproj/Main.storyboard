@@ -721,7 +721,8 @@ I would like to decrease your bolus ratio from 10 g/unit to 8 g/unit during Mond
                                 <constraints>
                                     <constraint firstAttribute="height" constant="76" id="UwQ-Mz-CDJ"/>
                                 </constraints>
-                                <string key="text">PLEASE CALL FOR FURTHER INSTRUCTIONS.</string>
+                                <string key="text">
+PLEASE CALL FOR FURTHER INSTRUCTIONS.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
