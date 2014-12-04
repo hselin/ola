@@ -35,11 +35,11 @@
     
     UILocalNotification* n2 = [[UILocalNotification alloc] init];
     n2.fireDate = [NSDate dateWithTimeIntervalSinceNow: 20];
-    n2.alertBody = @"ADMINSTERING GLUBAGON DOSAGE - SWIPE FOR INFO";
+    n2.alertBody = @"ADMINSTERING GLUCAGON - SWIPE FOR INFO";
     
     UILocalNotification* n3 = [[UILocalNotification alloc] init];
     n3.fireDate = [NSDate dateWithTimeIntervalSinceNow: 30];
-    n3.alertBody = @"PARAMEDICS ON THE WAY(ETA 7MIN) - SWIPE FOR INFO";
+    n3.alertBody = @"PARAMEDICS ON THE WAY(ETA: 7 MIN) - SWIPE FOR INFO";
     
     [[UIApplication sharedApplication] scheduleLocalNotification: n1];
     [[UIApplication sharedApplication] scheduleLocalNotification: n2];
